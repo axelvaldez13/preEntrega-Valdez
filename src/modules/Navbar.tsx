@@ -12,24 +12,29 @@ const Header = styled.header`
   padding: 16px 32px;
 
   .userNav {
-    display: flex;
-    align-items: center;
-
     ul {
+      display: none;
+    }
+    @media screen and (min-width: 768px) {
       display: flex;
-      margin: 0 24px;
-      > li {
-        margin: 0 8px;
-        list-style: none;
+      align-items: center;
 
-        ${Paragraph} {
-          color: ${colors.gray[400]};
-          font-weight: 700;
-          cursor: pointer;
+      ul {
+        display: flex;
+        margin: 0 24px;
+        > li {
+          margin: 0 8px;
+          list-style: none;
 
-          :hover {
-            color: ${colors.primary[600]};
-            transition: 0.5s ease-in-out color;
+          ${Paragraph} {
+            color: ${colors.gray[400]};
+            font-weight: 700;
+            cursor: pointer;
+
+            :hover {
+              color: ${colors.primary[600]};
+              transition: 0.5s ease-in-out color;
+            }
           }
         }
       }
@@ -40,9 +45,17 @@ const Header = styled.header`
     display: flex;
     align-items: center;
 
+    ${Button} {
+      display: none;
+      @media screen and (min-width: 768px) {
+        display: flex;
+      }
+    }
+
     > button {
       margin-left: 16px;
     }
+
     .buttonSvg {
       color: ${colors.gray[400]};
       width: 24px;
@@ -50,7 +63,23 @@ const Header = styled.header`
       height: 24px;
       background: none;
       border: none;
+      position: relative;
 
+      span {
+        background: ${colors.primary[600]};
+        color: ${colors.white};
+        font-weight: 700;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        bottom: 12px;
+        left: 12px;
+        font: 700 12px/16px 'Montserrat Alternates', sans-serif;
+      }
       :hover {
         color: ${colors.primary[600]};
         transition: 0.5s ease-in-out color;
@@ -58,8 +87,15 @@ const Header = styled.header`
     }
   }
 `
+interface INotification {
+  quantity: number
+}
 
-export const Navbar: React.FC = () => {
+const NotificationWidget: React.FC<INotification> = (props: INotification) => {
+  return <span>{props.quantity}</span>
+}
+
+const Navbar: React.FC = () => {
   return (
     <Header>
       <div className="userNav">
@@ -78,6 +114,7 @@ export const Navbar: React.FC = () => {
       </div>
       <div className="userActions">
         <button className="buttonSvg">
+          <NotificationWidget quantity={1} />
           <ShoppingCart />
         </button>
         <button className="buttonSvg">
@@ -88,3 +125,5 @@ export const Navbar: React.FC = () => {
     </Header>
   )
 }
+
+export default Navbar
