@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { Heading, Paragraph } from '../sharedComponents/Fonts'
+import { Heading, Paragraph } from '@sharedComponents/Fonts'
 import colors from '../styles/Colors'
-import { Input } from '../sharedComponents/Inputs'
-import { Glass } from '../sharedComponents/Icons'
+import { Input } from '@sharedComponents/Inputs'
+import { Glass } from '@sharedComponents/Icons'
 
 interface IHero {
   title: string

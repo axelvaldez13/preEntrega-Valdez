@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Logo } from '../sharedComponents/Logo'
-import { Paragraph } from '../sharedComponents/Fonts'
+import { Logo } from '@sharedComponents/Logo'
+import { Paragraph } from '@sharedComponents/Fonts'
 import colors from '../styles/Colors'
 
 const FooterView = styled.footer`

@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     height:100%;
     scroll-behavior: smooth;
     font-family: 'Montserrat Alternates', sans-serif;
+    background:white;
   }
   body, #root{
     display: flex;

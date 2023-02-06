@@ -28,6 +28,10 @@ const TabContainer = styled.div`
     background: ${colors.primary[200]};
     border-radius: 4px;
   }
+
+  @media screen and (min-width: 768px) {
+    overflow: none;
+  }
 `
 
 const Tabs: React.FC<ITabs> = (props: ITabs) => {

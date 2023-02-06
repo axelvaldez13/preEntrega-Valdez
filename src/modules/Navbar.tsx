@@ -1,9 +1,10 @@
 import styled from 'styled-components'
-import { Logo } from '../sharedComponents/Logo'
-import { ShoppingCart, User } from '../sharedComponents/Icons'
-import { Paragraph } from '../sharedComponents/Fonts'
+import { Logo } from '@sharedComponents/Logo'
+import { User } from '@sharedComponents/Icons'
 import colors from '../styles/Colors'
-import { Button } from '../sharedComponents/Buttons'
+import { Button } from '@sharedComponents/Buttons'
+import CartWidget from './CartWidget'
+import { Link } from 'react-router-dom'
 
 const Header = styled.header`
   display: flex;
@@ -25,10 +26,11 @@ const Header = styled.header`
         > li {
           margin: 0 8px;
           list-style: none;
-
-          ${Paragraph} {
+          a {
             color: ${colors.gray[400]};
             font-weight: 700;
+            font: 12px/16px 'Montserrat Alternates', sans-serif;
+            text-decoration: none;
             cursor: pointer;
 
             :hover {
@@ -87,35 +89,38 @@ const Header = styled.header`
     }
   }
 `
-interface INotification {
-  quantity: number
-}
-
-const NotificationWidget: React.FC<INotification> = (props: INotification) => {
-  return <span>{props.quantity}</span>
-}
 
 const Navbar: React.FC = () => {
   return (
     <Header>
       <div className="userNav">
-        <Logo />
+        <Link to={'/'}>
+          <Logo />
+        </Link>
         <ul>
           <li>
-            <Paragraph>Categorias</Paragraph>
+            <Link to={'/category/paisajes'}>Paisajes</Link>
           </li>
           <li>
-            <Paragraph>Sobre nosotros</Paragraph>
+            <Link to={'/category/alimentos'}>Alimentos</Link>
           </li>
           <li>
-            <Paragraph>Contactanos</Paragraph>
+            <Link to={'/category/arquitectura'}>Arquitectura</Link>
+          </li>
+          <li>
+            <Link to={'/category/publicitaria'}>Publicitaria</Link>
+          </li>
+          <li>
+            <Link to={'/category/retrato'}>Retrato</Link>
+          </li>
+          <li>
+            <Link to={'/category/macro'}>Macro</Link>
           </li>
         </ul>
       </div>
       <div className="userActions">
         <button className="buttonSvg">
-          <NotificationWidget quantity={1} />
-          <ShoppingCart />
+          <CartWidget quantity={1} />
         </button>
         <button className="buttonSvg">
           <User />

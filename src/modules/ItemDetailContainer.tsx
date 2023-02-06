@@ -1,19 +1,9 @@
 import styled from 'styled-components'
-import { SecondaryButton } from '@sharedComponents/Buttons'
-import { Funnel } from '@sharedComponents/Icons'
 import { Paragraph } from '@sharedComponents/Fonts'
-import { useState, useEffect } from 'react'
-import { LoaderMessage } from '@sharedComponents/LoaderMessage'
-import { useParams, Link } from 'react-router-dom'
 import colors from '../styles/Colors'
-
-interface IProps {
-  id: number
-  name: string
-  price: number
-  category: string
-  img: string
-}
+import { useEffect, useState } from 'react'
+import { LoaderMessage } from '@sharedComponents/LoaderMessage'
+import { useParams } from 'react-router-dom'
 
 const contentCard = [
   {
@@ -87,24 +77,6 @@ const contentCard = [
     img: '/chalten-editadas/Chalten-fitz-laguna.jpg'
   }
 ]
-const CardListView = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 16px 0;
-
-  @media screen and (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 24px;
-  }
-
-  > div {
-    margin-bottom: 16px;
-    @media screen and (min-width: 768px) {
-      margin-bottom: 0;
-    }
-  }
-`
 
 const Card = styled.div`
   display: flex;
@@ -115,6 +87,8 @@ const Card = styled.div`
     height: 200px;
     border-radius: 4px;
     background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin-bottom: 12px;
     display: flex;
 
@@ -142,14 +116,23 @@ const Card = styled.div`
     }
   }
 `
+const getListRequest = new Promise(resolve => {
+  resolve(contentCard)
+})
 
-const ItemListContainer: React.FC = () => {
+const getList = async (): Promise<IProps[]> => {
+  setLoader(true)
+  return await getListRequest
+    .then(response => response)
+    .finally(() => {
+      setLoader(false)
+    })
+}
+
+const ItemDetailContainer: React.FC = () => {
+  const [product, setProduct] = useState([])
   const [loader, setLoader] = useState(true)
-  const [products, setProducts] = useState<IProps[]>([])
-  const getListRequest = new Promise(resolve => {
-    resolve(contentCard)
-  })
-  const { categoryId } = useParams()
+  const { itemId } = useParams()
 
   const getList = async (): Promise<IProps[]> => {
     setLoader(true)
@@ -163,50 +146,32 @@ const ItemListContainer: React.FC = () => {
   useEffect(() => {
     setTimeout(async () => {
       const list = await getList()
-      if (typeof categoryId !== 'undefined') {
-        const filtredList = list.filter(prod => prod.category.toLowerCase() === categoryId)
-        setProducts(filtredList)
-      } else {
-        setProducts(list)
+      if (typeof itemId !== 'undefined') {
+        const filtredList = list.filter(prod => prod.id === Number(itemId))
+        setProduct(filtredList)
       }
     }, 1000)
-  }, [loader, products, categoryId])
+  }, [loader, product, itemId])
 
-  return (
-    <>
-      <div className="rowActions">
-        <SecondaryButton title="filter" type="button">
-          <span className="icon">
-            <Funnel />
-          </span>
-          Filtros
-        </SecondaryButton>
-      </div>
-      {loader ? (
-        <LoaderMessage />
-      ) : (
-        <CardListView>
-          {products.map(content => {
-            return (
-              <Link key={content.id} to={`item/${content.id}`}>
-                <Card>
-                  <div className="cardImage" style={{ backgroundImage: `url(${content.img})` }}>
-                    <div>
-                      <Paragraph className="title">{content.category}</Paragraph>
-                    </div>
-                  </div>
-                  <div className="cardName">
-                    <Paragraph className="title">{content.name}</Paragraph>
-                    <Paragraph className="price">${content.price} ARS</Paragraph>
-                  </div>
-                </Card>
-              </Link>
-            )
-          })}
-        </CardListView>
-      )}
-    </>
+  return loader ? (
+    <LoaderMessage />
+  ) : (
+    product.map(content => {
+      return (
+        <Card key={content.id}>
+          <div className="cardImage" style={{ backgroundImage: `url(${content.img})` }}>
+            <div>
+              <Paragraph className="title">{content.category}</Paragraph>
+            </div>
+          </div>
+          <div className="cardName">
+            <Paragraph className="title">{content.name}</Paragraph>
+            <Paragraph className="price">${content.price} ARS</Paragraph>
+          </div>
+        </Card>
+      )
+    })
   )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer
