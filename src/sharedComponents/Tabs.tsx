@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import colors from '../styles/Colors'
+import theme from '../styles/Theme'
 
 import { TabInterface } from '../utilities/TabController'
 
@@ -13,20 +13,24 @@ const TabContainer = styled.div`
   > button {
     background: none;
     border: none;
-    color: ${colors.primary[600]};
+    color: ${theme.color.primary[600]};
     cursor: pointer;
     padding: 16px;
     font: 700 12px/16px 'Montserrat Alternates', sans-serif;
     margin-right: 16px;
 
     :hover {
-      color: ${colors.primary[800]};
+      color: ${theme.color.primary[800]};
       transition: 0.5s ease-in-out color;
     }
   }
   .active {
-    background: ${colors.primary[200]};
+    background: ${theme.color.primary[200]};
     border-radius: 4px;
+  }
+
+  @media screen and (min-width: 768px) {
+    overflow: none;
   }
 `
 

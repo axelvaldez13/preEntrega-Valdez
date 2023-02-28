@@ -1,19 +1,8 @@
 import styled from 'styled-components'
-import { SecondaryButton } from '@sharedComponents/Buttons'
-import { Funnel } from '@sharedComponents/Icons'
 import { Paragraph } from '@sharedComponents/Fonts'
-import { Link } from 'react-router-dom'
-import theme from '../styles/Theme'
+import theme from '@styles/Theme'
 
-interface IProps {
-  id: number
-  name: string
-  price: number
-  category: string
-  img: string
-}
-
-const contentCard: IProps[] = [
+const contentCard = [
   {
     id: 0,
     name: 'Glaciares',
@@ -85,24 +74,6 @@ const contentCard: IProps[] = [
     img: '/chalten-editadas/Chalten-fitz-laguna.jpg'
   }
 ]
-const CardListView = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 16px 0;
-
-  @media screen and (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 24px;
-  }
-
-  > div {
-    margin-bottom: 16px;
-    @media screen and (min-width: 768px) {
-      margin-bottom: 0;
-    }
-  }
-`
 
 const Card = styled.div`
   display: flex;
@@ -113,6 +84,8 @@ const Card = styled.div`
     height: 200px;
     border-radius: 4px;
     background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin-bottom: 12px;
     display: flex;
 
@@ -141,39 +114,26 @@ const Card = styled.div`
   }
 `
 
-const ItemListContainer: React.FC = () => {
+const ItemDetailContainer: React.FC = () => {
   return (
     <>
-      <div className="rowActions">
-        <SecondaryButton title="filter" type="button">
-          <span className="icon">
-            <Funnel />
-          </span>
-          Filtros
-        </SecondaryButton>
-      </div>
-
-      <CardListView>
-        {contentCard.map(content => {
-          return (
-            <Link key={content.id} to={`/item/${content.id}`}>
-              <Card>
-                <div className="cardImage" style={{ backgroundImage: `url(${content.img})` }}>
-                  <div>
-                    <Paragraph className="title">{content.category}</Paragraph>
-                  </div>
-                </div>
-                <div className="cardName">
-                  <Paragraph className="title">{content.name}</Paragraph>
-                  <Paragraph className="price">${content.price} ARS</Paragraph>
-                </div>
-              </Card>
-            </Link>
-          )
-        })}
-      </CardListView>
+      {contentCard.map(content => {
+        return (
+          <Card key={content.id}>
+            <div className="cardImage" style={{ backgroundImage: `url(${content.img})` }}>
+              <div>
+                <Paragraph className="title">{content.category}</Paragraph>
+              </div>
+            </div>
+            <div className="cardName">
+              <Paragraph className="title">{content.name}</Paragraph>
+              <Paragraph className="price">${content.price} ARS</Paragraph>
+            </div>
+          </Card>
+        )
+      })}
     </>
   )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

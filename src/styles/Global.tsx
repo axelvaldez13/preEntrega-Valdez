@@ -7,9 +7,11 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   html, body {
+    font-size: 16px;
     height:100%;
     scroll-behavior: smooth;
     font-family: 'Montserrat Alternates', sans-serif;
+    background:${props => props.theme.color.gray[800]};
   }
   body, #root{
     display: flex;
