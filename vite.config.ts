@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       '@sharedComponents': path.resolve(__dirname, './src/sharedComponents'),
       '@utilities': path.resolve(__dirname, './src/utilities'),
+      '@styles': path.resolve(__dirname, './src/styles'),
       '@services': path.resolve(__dirname, './src/services'),
       '@typesProyect': path.resolve(__dirname, './src/types')
     }

@@ -1,26 +1,26 @@
 import styled from 'styled-components'
-import colors from '../styles/Colors'
+import theme from '../styles/Theme'
 
 export const Button = styled.button`
-  background: ${colors.primary[600]};
+  background: ${theme.color.primary[600]};
   padding: 12px 24px;
-  color: ${colors.white};
+  color: ${theme.color.white};
   border: none;
   cursor: pointer;
   font: 700 12px/16px 'Montserrat Alternates', sans-serif;
   border-radius: 4px;
 
   :hover {
-    background: ${colors.primary[800]};
+    background: ${theme.color.primary[800]};
     transition: 0.5s ease-in-out background;
   }
 `
 
 export const SecondaryButton = styled.button`
-  background: ${colors.white};
+  background: ${theme.color.white};
   padding: 12px 24px;
-  color: ${colors.gray[400]};
-  border: 1px solid ${colors.gray[400]};
+  color: ${theme.color.gray[400]};
+  border: 1px solid ${theme.color.gray[400]};
   cursor: pointer;
   font: 700 12px/16px 'Montserrat Alternates', sans-serif;
   border-radius: 4px;
@@ -34,8 +34,8 @@ export const SecondaryButton = styled.button`
   }
 
   :hover {
-    background: ${colors.gray[400]};
-    color: ${colors.white};
+    background: ${theme.color.gray[400]};
+    color: ${theme.color.white};
     transition: 0.5s ease-in-out background;
   }
 `

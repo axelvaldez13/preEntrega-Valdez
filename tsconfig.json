@@ -18,7 +18,8 @@
     "paths": {
       "@sharedComponents/*": ["./src/sharedComponents/*"],
       "@utilities/*": ["./src/utilities/*"],
-      "@services/*": ["./src/services/*"]
+      "@services/*": ["./src/services/*"],
+      "@styles/*": ["./src/styles/*"]
     }
   },
   "include": ["src"],

@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 import { Logo } from '@sharedComponents/Logo'
 import { Paragraph } from '@sharedComponents/Fonts'
-import colors from '../styles/Colors'
+import theme from '../styles/Theme'
 
 const FooterView = styled.footer`
-  background: ${colors.gray[100]};
+  background: ${theme.color.gray[100]};
   padding: 16px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   ${Paragraph} {
-    color: ${colors.primary[600]};
+    color: ${theme.color.primary[600]};
     font-weight: 700;
   }
 `

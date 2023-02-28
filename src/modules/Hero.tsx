@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Heading, Paragraph } from '@sharedComponents/Fonts'
-import colors from '../styles/Colors'
+import theme from '../styles/Theme'
 import { Input } from '@sharedComponents/Inputs'
 import { Glass } from '@sharedComponents/Icons'
 
@@ -16,7 +16,7 @@ const HeroBackground = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  color: ${colors.white};
+  color: ${theme.color.white};
   position: relative;
   margin-bottom: 32px;
 

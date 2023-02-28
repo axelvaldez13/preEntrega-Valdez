@@ -1,6 +1,6 @@
 import { SubHeading } from '@sharedComponents/Fonts'
 import styled from 'styled-components'
-import colors from '../styles/Colors'
+import theme from '../styles/Theme'
 
 const LoaderContainer = styled.div`
   padding: 32px;
@@ -25,14 +25,14 @@ const LoaderContainer = styled.div`
   }
   .loader:before {
     animation: ball1 2s infinite;
-    background-color: ${colors.info[400]};
-    box-shadow: 30px 0 0 ${colors.info[400]};
+    background-color: ${theme.color.primary[400]};
+    box-shadow: 30px 0 0 ${theme.color.primary[400]};
     margin-bottom: 10px;
   }
   .loader:after {
     animation: ball2 2s infinite;
-    background-color: ${colors.info[400]};
-    box-shadow: 30px 0 0 ${colors.info[400]};
+    background-color: ${theme.color.primary[400]};
+    box-shadow: 30px 0 0 ${theme.color.primary[400]};
   }
 
   @keyframes rotate {
@@ -52,32 +52,32 @@ const LoaderContainer = styled.div`
 
   @keyframes ball1 {
     0% {
-      box-shadow: 30px 0 0 ${colors.info[400]};
+      box-shadow: 30px 0 0 ${theme.color.primary[400]};
     }
     50% {
-      box-shadow: 0 0 0 ${colors.info[400]};
+      box-shadow: 0 0 0 ${theme.color.primary[400]};
       margin-bottom: 0;
       -webkit-transform: translate(15px, 15px);
       -moz-transform: translate(15px, 15px);
     }
     100% {
-      box-shadow: 30px 0 0 ${colors.info[400]};
+      box-shadow: 30px 0 0 ${theme.color.primary[400]};
       margin-bottom: 10px;
     }
   }
 
   @keyframes ball2 {
     0% {
-      box-shadow: 30px 0 0 ${colors.info[400]};
+      box-shadow: 30px 0 0 ${theme.color.primary[400]};
     }
     50% {
-      box-shadow: 0 0 0 ${colors.info[400]};
+      box-shadow: 0 0 0 ${theme.color.primary[400]};
       margin-top: -20px;
       -webkit-transform: translate(15px, 15px);
       -moz-transform: translate(15px, 15px);
     }
     100% {
-      box-shadow: 30px 0 0 ${colors.info[400]};
+      box-shadow: 30px 0 0 ${theme.color.primary[400]};
       margin-top: 0;
     }
   }

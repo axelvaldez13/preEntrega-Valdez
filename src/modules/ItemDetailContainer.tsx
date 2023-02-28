@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 import { Paragraph } from '@sharedComponents/Fonts'
-import colors from '../styles/Colors'
-import { useEffect, useState } from 'react'
-import { LoaderMessage } from '@sharedComponents/LoaderMessage'
-import { useParams } from 'react-router-dom'
+import theme from '@styles/Theme'
 
 const contentCard = [
   {
@@ -94,10 +91,10 @@ const Card = styled.div`
 
     ${Paragraph} {
       margin: 8px;
-      background: ${colors.info[600]};
+      background: ${theme.color.primary[600]};
       padding: 8px;
       color: #fff;
-      font-size: 12px;
+      font: ${theme.font.fontSm};
       border-radius: 4px;
     }
   }
@@ -112,65 +109,30 @@ const Card = styled.div`
     }
 
     .price {
-      color: ${colors.primary[600]};
+      color: ${theme.color.primary[600]};
     }
   }
 `
-const getListRequest = new Promise(resolve => {
-  resolve(contentCard)
-})
-
-const getList = async (): Promise<IProps[]> => {
-  setLoader(true)
-  return await getListRequest
-    .then(response => response)
-    .finally(() => {
-      setLoader(false)
-    })
-}
 
 const ItemDetailContainer: React.FC = () => {
-  const [product, setProduct] = useState([])
-  const [loader, setLoader] = useState(true)
-  const { itemId } = useParams()
-
-  const getList = async (): Promise<IProps[]> => {
-    setLoader(true)
-    return await getListRequest
-      .then(response => response)
-      .finally(() => {
-        setLoader(false)
-      })
-  }
-
-  useEffect(() => {
-    setTimeout(async () => {
-      const list = await getList()
-      if (typeof itemId !== 'undefined') {
-        const filtredList = list.filter(prod => prod.id === Number(itemId))
-        setProduct(filtredList)
-      }
-    }, 1000)
-  }, [loader, product, itemId])
-
-  return loader ? (
-    <LoaderMessage />
-  ) : (
-    product.map(content => {
-      return (
-        <Card key={content.id}>
-          <div className="cardImage" style={{ backgroundImage: `url(${content.img})` }}>
-            <div>
-              <Paragraph className="title">{content.category}</Paragraph>
+  return (
+    <>
+      {contentCard.map(content => {
+        return (
+          <Card key={content.id}>
+            <div className="cardImage" style={{ backgroundImage: `url(${content.img})` }}>
+              <div>
+                <Paragraph className="title">{content.category}</Paragraph>
+              </div>
             </div>
-          </div>
-          <div className="cardName">
-            <Paragraph className="title">{content.name}</Paragraph>
-            <Paragraph className="price">${content.price} ARS</Paragraph>
-          </div>
-        </Card>
-      )
-    })
+            <div className="cardName">
+              <Paragraph className="title">{content.name}</Paragraph>
+              <Paragraph className="price">${content.price} ARS</Paragraph>
+            </div>
+          </Card>
+        )
+      })}
+    </>
   )
 }
 
