@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import theme from '@styles/Theme'
 
 export const GlobalStyle = createGlobalStyle`  
   * {
@@ -11,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     height:100%;
     scroll-behavior: smooth;
     font-family: 'Montserrat Alternates', sans-serif;
-    background:${props => props.theme.color.gray[800]};
+    background:${theme.color.gray[800]};
   }
   body, #root{
     display: flex;
