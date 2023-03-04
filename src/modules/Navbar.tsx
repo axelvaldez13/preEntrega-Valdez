@@ -1,5 +1,4 @@
 import { Logo } from '@sharedComponents/Logo'
-import { Heart } from '@sharedComponents/Icons'
 import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
 import { Header } from '@moduleStyled//NavbarStyled'
@@ -26,10 +25,7 @@ const Navbar: React.FC = () => {
       </ul>
       <div className="userActions">
         <button className="buttonSvg">
-          <CartWidget quantity={1} />
-        </button>
-        <button className="buttonSvg">
-          <Heart />
+          <CartWidget />
         </button>
         <ul className="unLogged">
           <li>

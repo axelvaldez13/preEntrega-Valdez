@@ -1,13 +1,14 @@
 import { ShoppingCart } from '@sharedComponents/Icons'
+import { CartContext } from '@context/CartContext'
+import { WidgetCount } from '@moduleStyled/CartWidgetStyled'
+import { useContext } from 'react'
 
-interface INotification {
-  quantity: number
-}
+const CartWidget: React.FC = () => {
+  const contextProvider = useContext(CartContext)
 
-const CartWidget: React.FC<INotification> = (props: INotification) => {
   return (
     <>
-      <span>{props.quantity}</span>
+      {contextProvider?.cartList.length !== 0 && <WidgetCount>{contextProvider?.cartList.length}</WidgetCount>}
       <ShoppingCart />
     </>
   )

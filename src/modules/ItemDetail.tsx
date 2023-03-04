@@ -2,6 +2,8 @@ import { Paragraph } from '@sharedComponents/Fonts'
 import { Card, CardImage } from '@moduleStyled/Layout'
 import theme from '@styles/Theme'
 import ItemCount from './ItemCount'
+import { CartContext } from '@context/CartContext'
+import { useContext } from 'react'
 
 type IList = Record<string, string | number>
 
@@ -10,6 +12,12 @@ interface IListDetail {
 }
 
 export const ItemDetail: React.FC<IListDetail> = ({ listContent }) => {
+  const contextProvider = useContext(CartContext)
+
+  const onAddCart = (newProduct: IList): void => {
+    contextProvider?.setNewProduct([...contextProvider?.cartList, newProduct])
+  }
+
   return (
     <>
       {listContent.map((content, index) => {
@@ -29,7 +37,11 @@ export const ItemDetail: React.FC<IListDetail> = ({ listContent }) => {
                   ${content.price} ARS
                 </Paragraph>
               </div>
-              <ItemCount />
+              <ItemCount
+                onAddCart={() => {
+                  onAddCart(content)
+                }}
+              />
             </div>
           </Card>
         )

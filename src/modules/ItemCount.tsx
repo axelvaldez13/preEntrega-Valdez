@@ -1,13 +1,18 @@
 import { ItemCountContainer } from '@moduleStyled/ItemCountStyled'
-import { Heart, ShoppingCart } from '@sharedComponents/Icons'
+import { ShoppingCart } from '@sharedComponents/Icons'
 
-const ItemCount: React.FC = () => {
+interface IItemCount {
+  onAddCart: (newProduct: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+}
+
+const ItemCount: React.FC<IItemCount> = (props: IItemCount) => {
   return (
     <ItemCountContainer>
-      <button>
-        <Heart />
-      </button>
-      <button>
+      <button
+        onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+          props.onAddCart(e)
+        }}
+      >
         <ShoppingCart />
       </button>
     </ItemCountContainer>
