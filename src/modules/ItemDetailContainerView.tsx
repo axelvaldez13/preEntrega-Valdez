@@ -1,6 +1,5 @@
-import styled from 'styled-components'
+import { Card } from '@moduleStyled/ItemDetailStyled'
 import { Paragraph } from '@sharedComponents/Fonts'
-import theme from '@styles/Theme'
 
 const contentCard = [
   {
@@ -74,45 +73,6 @@ const contentCard = [
     img: '/chalten-editadas/Chalten-fitz-laguna.jpg'
   }
 ]
-
-const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-
-  .cardImage {
-    height: 200px;
-    border-radius: 4px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: 12px;
-    display: flex;
-
-    ${Paragraph} {
-      margin: 8px;
-      background: ${theme.color.primary[600]};
-      padding: 8px;
-      color: #fff;
-      font: ${theme.font.fontSm};
-      border-radius: 4px;
-    }
-  }
-
-  .cardName {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    ${Paragraph} {
-      font-weight: 700;
-    }
-
-    .price {
-      color: ${theme.color.primary[600]};
-    }
-  }
-`
 
 const ItemDetailContainer: React.FC = () => {
   return (

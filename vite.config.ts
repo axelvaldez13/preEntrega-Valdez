@@ -10,7 +10,9 @@ export default defineConfig({
       '@sharedComponents': path.resolve(__dirname, './src/sharedComponents'),
       '@utilities': path.resolve(__dirname, './src/utilities'),
       '@styles': path.resolve(__dirname, './src/styles'),
+      '@modules': path.resolve(__dirname, './src/modules'),
       '@services': path.resolve(__dirname, './src/services'),
+      '@moduleStyled': path.resolve(__dirname, './src/moduleStyled'),
       '@typesProyect': path.resolve(__dirname, './src/types')
     }
   }

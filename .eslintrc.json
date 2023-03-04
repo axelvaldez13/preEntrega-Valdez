@@ -4,6 +4,11 @@
     "es2021": true,
     "node": true
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "ignorePatterns": ["vite.config.ts"],
   "extends": ["plugin:react/recommended", "standard-with-typescript", "prettier"],
   "overrides": [
