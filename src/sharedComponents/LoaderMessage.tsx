@@ -1,4 +1,4 @@
-import { SubHeading } from '@sharedComponents/Fonts'
+import { HeadingTwo } from '@sharedComponents/Fonts'
 import styled from 'styled-components'
 import theme from '../styles/Theme'
 
@@ -89,7 +89,7 @@ export const LoaderMessage: React.FC = () => {
       <div className="loader">
         <span></span>
       </div>
-      <SubHeading>Cargando...</SubHeading>
+      <HeadingTwo>Cargando...</HeadingTwo>
     </LoaderContainer>
   )
 }
