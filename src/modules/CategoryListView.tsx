@@ -1,36 +1,48 @@
-const listHowWorks = [
+import { CategoryListContainer } from '@moduleStyled/CategoryListStyled'
+import { HeadingTwo, Paragraph } from '@sharedComponents/Fonts'
+import { Heart, Globe, User, GlassPlus } from '@sharedComponents/Icons'
+
+const categoriesList = [
   {
-    id: 0,
-    name: 'Glaciares',
-    price: 1234,
-    category: 'Macro',
-    creator: 'Axel Valdez',
-    img: '/calafate-editadas/Calafate-glaciar-01.jpg'
+    title: 'Arquitectura',
+    icon: <Heart />,
+    subtitle: 'Encontra edificios antiguos o nuevas construcciones.'
   },
   {
-    id: 1,
-    name: 'Glaciares',
-    category: 'Paisajes',
-    price: 1234,
-    creator: 'Axel Valdez',
-    img: '/calafate-editadas/Calafate-glaciar-02.jpg'
+    title: 'Paisajes',
+    icon: <Globe />,
+    subtitle: 'Descubri los bosques, montañas, playas, entre otros paisajes dentro del pais.'
   },
   {
-    id: 2,
-    name: 'Glaciares',
-    category: 'Alimentos',
-    price: 1234,
-    creator: 'Axel Valdez',
-    img: '/calafate-editadas/Calafate-glaciar-bandera.jpg'
+    title: 'Publicitario',
+    icon: <User />,
+    subtitle: 'Busca productos originarios, alimentos, objetos, entre otros.'
+  },
+  {
+    title: 'Macro',
+    icon: <GlassPlus />,
+    subtitle: 'Descubri fotos ineditas de nuestra fauna o flora.'
   }
 ]
 
 const CategoryListView: React.FC = () => {
   return (
-    <MostBoughtContainer>
-      <ItemDetail listContent={listHowWorks} />
-      <HeadingTwo>Estas son las imagenes mas compradas del dia.</HeadingTwo>
-    </MostBoughtContainer>
+    <CategoryListContainer>
+      <HeadingTwo>Busca tu categoria favorita.</HeadingTwo>
+      <div className="columnContainer">
+        {categoriesList.map((list, index) => {
+          return (
+            <div className="columnsList" key={index}>
+              <div className="listIcon">{list.icon}</div>
+              <div>
+                <Paragraph fontWeight={600}>{list.title}</Paragraph>
+                <Paragraph>{list.subtitle}</Paragraph>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </CategoryListContainer>
   )
 }
 
