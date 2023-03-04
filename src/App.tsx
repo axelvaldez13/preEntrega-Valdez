@@ -1,43 +1,26 @@
 import Footer from './modules/Footer'
 import ItemListContainer from './modules/ItemListContainer'
-import Navbar from './modules/Navbar/Navbar'
+import Navbar from './modules/Navbar'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import ItemDetailContainer from './modules/ItemDetailContainer'
+import ItemDetailContainer from './modules/ItemDetailContainerView'
 import styled from 'styled-components'
 import Hero from './modules/Hero'
-
-const Layout = styled.div`
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-
-  .rowActions {
-    display: flex;
-    align-items: end;
-    justify-content: end;
-  }
-`
+import HighlightView from './modules/HighlightView'
+import { Layout } from '@moduleStyled/Layout'
+import HowWorksView from './modules/HowWorksView'
 
 const App: React.FC = () => {
   return (
     <>
       <BrowserRouter>
         <Navbar />
-        <Hero
-          title="Descubre un mundo de imágenes hecho en Argentina"
-          subtitle="Compra stocks de imágenes para utilizar en tu emprendimiento en pesos argentinos "
-        />
         <Layout>
-          <Routes>
-            <Route path="/" element={<ItemListContainer />} />
-            <Route path="/category/:categoryId" element={<ItemListContainer />} />
-            <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
+          <Hero title="Descubre un banco de imágenes hecho en Argentina" subtitle="Compra stocks de imagenes para utilizar en tu emprendimiento en pesos" />
+          <HighlightView />
+          <HowWorksView />
+          <Footer />
         </Layout>
       </BrowserRouter>
-      <Footer />
     </>
   )
 }

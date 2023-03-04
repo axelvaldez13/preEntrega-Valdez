@@ -6,34 +6,32 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 32px;
+  padding: 1rem 1.5rem;
+
+  .logo {
+    display: flex;
+    align-tems: center;
+  }
 
   .userNav {
-    ul {
-      display: none;
-    }
+    display: none;
+
     @media screen and (min-width: 768px) {
       display: flex;
       align-items: center;
+      list-style: none;
+      font: ${theme.font.fontSm};
+      font-weight: 600;
 
-      ul {
+      > li > a {
         display: flex;
-        margin: 0 24px;
-        > li {
-          margin: 0 8px;
-          list-style: none;
-          a {
-            color: ${theme.color.gray[400]};
-            font-weight: 700;
-            font: ${theme.font.fontSm};
-            text-decoration: none;
-            cursor: pointer;
+        cursor: pointer;
+        color: ${theme.color.gray[400]};
+        margin: 0 0.5rem;
 
-            :hover {
-              color: ${theme.color.primary[600]};
-              transition: 0.5s ease-in-out color;
-            }
-          }
+        :hover {
+          color: ${theme.color.primary[400]};
+          transition: 0.5s ease-in-out color;
         }
       }
     }
@@ -52,6 +50,30 @@ export const Header = styled.header`
 
     > button {
       margin-left: 16px;
+    }
+
+    .unLogged {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      font: ${theme.font.fontSm};
+      font-weight: 600;
+
+      .primary {
+        color: ${theme.color.primary[400]};
+      }
+
+      > li > a {
+        display: flex;
+        cursor: pointer;
+        color: ${theme.color.gray[400]};
+        margin: 0 0.5rem;
+
+        :hover {
+          color: ${theme.color.primary[400]};
+          transition: 0.5s ease-in-out color;
+        }
+      }
     }
 
     .buttonSvg {
@@ -79,7 +101,7 @@ export const Header = styled.header`
         font: 700 12px/16px 'Montserrat Alternates', sans-serif;
       }
       :hover {
-        color: ${theme.color.primary[600]};
+        color: ${theme.color.primary[400]};
         transition: 0.5s ease-in-out color;
       }
     }
