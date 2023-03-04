@@ -23,7 +23,7 @@ export const CreatorHighlighInfo = styled.div`
 export const HighlightContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
   justify-content: end;
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -36,6 +36,6 @@ export const HighlightImage = styled.div<IHighlight>`
   height: 24rem;
 
   @media screen and (min-width: 768px) {
-    height: 32rem;
+    height: 40rem;
   }
 `

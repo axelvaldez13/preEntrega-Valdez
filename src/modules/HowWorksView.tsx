@@ -35,10 +35,10 @@ const HowWorksView: React.FC = () => {
         <HeadingTwo>¿Como funciona Creargtive?</HeadingTwo>
         <Paragraph>Tocas las dudas que necesitas aclarar sobre nuestra plataforma está acá.</Paragraph>
       </div>
-      <div className="columnsList">
+      <div className="columnContainer">
         {listHowWorks.map(list => {
           return (
-            <div key={list.id}>
+            <div className="columnsList" key={list.id}>
               <div className="iconList">{list.icon}</div>
               <Paragraph fontWeight={600}>{list.title}</Paragraph>
               <Paragraph>{list.text}</Paragraph>
