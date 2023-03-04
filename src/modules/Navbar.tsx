@@ -1,5 +1,5 @@
 import { Logo } from '@sharedComponents/Logo'
-import { User } from '@sharedComponents/Icons'
+import { Heart } from '@sharedComponents/Icons'
 import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
 import { Header } from '@moduleStyled//NavbarStyled'
@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
           <CartWidget quantity={1} />
         </button>
         <button className="buttonSvg">
-          <User />
+          <Heart />
         </button>
         <ul className="unLogged">
           <li>
@@ -41,7 +41,6 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
         </ul>
-        {/*   <Button>Subir contenido</Button> */}
       </div>
     </Header>
   )

@@ -1,7 +1,6 @@
 import Footer from '@modules/Footer'
 import Navbar from '@modules/Navbar'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import ItemDetailContainer from '@modules/ItemDetailContainerView'
+import { BrowserRouter } from 'react-router-dom'
 import Hero from '@modules/Hero'
 import HighlightView from '@modules/HighlightView'
 import { Layout } from '@moduleStyled/Layout'
