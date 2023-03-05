@@ -7,20 +7,23 @@ import { Layout } from '@moduleStyled/Layout'
 import HowWorksView from '@modules/HowWorksView'
 import MostBoughtView from '@modules/MostBoughtView'
 import CategoryListView from '@modules/CategoryListView'
+import { CartContextProvider } from '@context/CartContext'
 
 const App: React.FC = () => {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
-        <Layout>
-          <Hero title="Descubre un banco de imágenes hecho en Argentina" subtitle="Compra stocks de imagenes para utilizar en tu emprendimiento en pesos" />
-          <HighlightView />
-          <HowWorksView />
-          <MostBoughtView />
-          <CategoryListView />
-          <Footer />
-        </Layout>
+        <CartContextProvider>
+          <Navbar />
+          <Layout>
+            <Hero title="Descubre un banco de imágenes hecho en Argentina" subtitle="Compra stocks de imagenes para utilizar en tu emprendimiento en pesos" />
+            <HighlightView />
+            <HowWorksView />
+            <MostBoughtView />
+            <CategoryListView />
+            <Footer />
+          </Layout>
+        </CartContextProvider>
       </BrowserRouter>
     </>
   )

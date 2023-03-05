@@ -12,6 +12,8 @@ export default defineConfig({
       '@styles': path.resolve(__dirname, './src/styles'),
       '@modules': path.resolve(__dirname, './src/modules'),
       '@services': path.resolve(__dirname, './src/services'),
+      '@context': path.resolve(__dirname, './src/context'),
+      '@firebaseCfg': path.resolve(__dirname, './src/firebaseCfg'),
       '@moduleStyled': path.resolve(__dirname, './src/moduleStyled'),
       '@typesProyect': path.resolve(__dirname, './src/types')
     }
