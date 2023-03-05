@@ -17,8 +17,8 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/home" element={<Home />} />
               <Route path="/category" element={<ItemListContainer />} />
-              <Route path="/category/:id" element={<ItemListContainer />} />
-              <Route path="/item/:id" element={<ItemDetailContainer />} />
+              <Route path="/category/:categoryId" element={<ItemListContainer />} />
+              <Route path="/item/:itemId" element={<ItemDetailContainer />} />
               <Route path="*" element={<Home />} />
             </Routes>
             <Footer />

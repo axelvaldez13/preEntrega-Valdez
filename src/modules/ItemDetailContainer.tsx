@@ -1,4 +1,4 @@
-import { Card } from '@moduleStyled/ItemDetailStyled'
+import { Card } from '@moduleStyled/ItemCardStyled'
 import { Paragraph } from '@sharedComponents/Fonts'
 
 const contentCard = [

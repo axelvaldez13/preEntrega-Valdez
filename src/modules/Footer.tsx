@@ -1,6 +1,7 @@
 import { Logo } from '@sharedComponents/Logo'
 import { Paragraph } from '@sharedComponents/Fonts'
 import { FooterView } from '@moduleStyled/FooterStyled'
+import { Link } from 'react-router-dom'
 
 const listCategories = [
   {
@@ -29,19 +30,15 @@ const listCategories = [
     sections: [
       {
         subSection: 'Arquitectura',
-        linkTo: '/'
+        linkTo: '/category/arquitectura'
       },
       {
         subSection: 'Paisajes',
-        linkTo: '/'
+        linkTo: '/category/paisajes'
       },
       {
         subSection: 'Publicitaria',
-        linkTo: '/'
-      },
-      {
-        subSection: 'Macro',
-        linkTo: '/'
+        linkTo: '/category/publicitaria'
       }
     ]
   },
@@ -91,8 +88,8 @@ const Footer: React.FC = () => {
               <Paragraph fontWeight={600}>{list.title}</Paragraph>
               {list.sections.map((section, index) => {
                 return (
-                  <Paragraph key={index} fontWeight={200}>
-                    {section.subSection}
+                  <Paragraph key={index} fontWeight={400}>
+                    <Link to={section.linkTo}>{section.subSection}</Link>
                   </Paragraph>
                 )
               })}

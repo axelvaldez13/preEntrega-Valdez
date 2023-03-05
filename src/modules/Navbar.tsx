@@ -14,10 +14,7 @@ const Navbar: React.FC = () => {
           <Link to={'/category'}>Galeria</Link>
         </li>
         <li>
-          <Link to={'/category/paisajes'}>Paisajes</Link>
-        </li>
-        <li>
-          <Link to={'/category/alimentos'}>Alimentos</Link>
+          <Link to={'/category/paisaje'}>Paisajes</Link>
         </li>
         <li>
           <Link to={'/category/arquitectura'}>Arquitectura</Link>
