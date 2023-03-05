@@ -24,7 +24,7 @@ export const ItemDetail: React.FC<IListDetail> = ({ listContent }) => {
           <Card key={index}>
             <CardImage backgroundImage={content.imageUrl === null ? '' : content.imageUrl}>
               <div>
-                <Paragraph className="title">{content.category}</Paragraph>
+                <Paragraph className="title">{content.categoria}</Paragraph>
               </div>
             </CardImage>
             <div className="cardInfoContainer">
