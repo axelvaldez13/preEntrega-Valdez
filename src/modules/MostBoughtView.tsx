@@ -1,6 +1,6 @@
 import { MostBoughtContainer } from '@moduleStyled/MostBoughtStyled'
 import { HeadingTwo } from '@sharedComponents/Fonts'
-import ItemDetail from './ItemCardView'
+import ItemCardView from '@modules/ItemCardView'
 import { useEffect, useState } from 'react'
 import { getDoc, doc, getFirestore } from 'firebase/firestore'
 import { LoaderMessage } from '@sharedComponents/LoaderMessage'
@@ -34,7 +34,7 @@ const MostBoughtView: React.FC = () => {
         <LoaderMessage />
       ) : (
         <MostBoughtContainer>
-          <ItemDetail listContent={mostList} />
+          <ItemCardView listContent={mostList} />
           <HeadingTwo>Estas son las imagenes mas compradas del dia.</HeadingTwo>
         </MostBoughtContainer>
       )}

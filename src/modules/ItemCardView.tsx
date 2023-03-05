@@ -11,7 +11,7 @@ interface IListDetail {
   listContent: IList[]
 }
 
-export const ItemDetail: React.FC<IListDetail> = ({ listContent }) => {
+export const ItemCardView: React.FC<IListDetail> = ({ listContent }) => {
   const contextProvider = useContext(CartContext)
 
   const onAddCart = (newProduct: IList): void => {
@@ -52,4 +52,4 @@ export const ItemDetail: React.FC<IListDetail> = ({ listContent }) => {
   )
 }
 
-export default ItemDetail
+export default ItemCardView
