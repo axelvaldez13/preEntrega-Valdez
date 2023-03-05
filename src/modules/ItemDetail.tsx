@@ -2,7 +2,7 @@ import { Paragraph } from '@sharedComponents/Fonts'
 import { Card, CardImage } from '@moduleStyled/Layout'
 import theme from '@styles/Theme'
 import ItemCount from './ItemCount'
-import { CartContext } from '@context/CartContext'
+import { CartContext } from '@utilities/CartContext'
 import { useContext } from 'react'
 
 type IList = Record<string, string | number>

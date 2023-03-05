@@ -7,7 +7,7 @@ import { Layout } from '@moduleStyled/Layout'
 import HowWorksView from '@modules/HowWorksView'
 import MostBoughtView from '@modules/MostBoughtView'
 import CategoryListView from '@modules/CategoryListView'
-import { CartContextProvider } from '@context/CartContext'
+import { CartContextProvider } from '@utilities/CartContext'
 
 const App: React.FC = () => {
   return (
