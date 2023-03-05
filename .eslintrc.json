@@ -4,6 +4,12 @@
     "es2021": true,
     "node": true
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "ignorePatterns": ["vite.config.ts"],
   "extends": ["plugin:react/recommended", "standard-with-typescript", "prettier"],
   "overrides": [
     {
@@ -16,6 +22,7 @@
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-explicit-any": 2,
         "@typescript-eslint/consistent-type-definitions": ["error"],
+        "@typescript-eslint/explicit-module-boundary-types": ["off"],
         "@typescript-eslint/no-use-before-define": "off"
       }
     }
@@ -24,12 +31,14 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "globals": { "React": true },
   "plugins": ["react", "prettier"],
   "rules": {
     "no-use-before-define": "off",
     "space-before-function-paren": "off",
     "prettier/prettier": "error",
     "no-undef": "error",
+    "react/prop-types": "off",
     "no-console": "error"
   }
 }
