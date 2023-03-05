@@ -4,6 +4,7 @@ import theme from '../styles/Theme'
 export const Button = styled.button`
   background: ${theme.color.primary[600]};
   padding: 12px 24px;
+  width: 100%;
   color: ${theme.color.white};
   border: none;
   cursor: pointer;

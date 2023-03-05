@@ -30,6 +30,18 @@ export const FooterView = styled.footer`
     flex-direction: column;
     margin-bottom: 2.5rem;
 
+    a {
+      text-decoration: none;
+      color: ${theme.color.gray[600]};
+      :hover {
+        color: ${theme.color.gray[400]};
+        transition: 0.5s ease-in-out color;
+      }
+    }
+    p {
+      padding: 0.2rem 0;
+    }
+
     @media screen and (min-width: 768px) {
       display: grid;
       grid-template-columns: repeat(5, 4fr);

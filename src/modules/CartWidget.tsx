@@ -1,7 +1,7 @@
 import { ShoppingCart } from '@sharedComponents/Icons'
-import { CartContext } from '@context/CartContext'
 import { WidgetCount } from '@moduleStyled/CartWidgetStyled'
 import { useContext } from 'react'
+import { CartContext } from '@utilities/CartContext'
 
 const CartWidget: React.FC = () => {
   const contextProvider = useContext(CartContext)
