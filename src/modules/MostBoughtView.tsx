@@ -1,40 +1,43 @@
 import { MostBoughtContainer } from '@moduleStyled/MostBoughtStyled'
 import { HeadingTwo } from '@sharedComponents/Fonts'
 import ItemDetail from './ItemDetail'
+import { useEffect, useState } from 'react'
+import { getDoc, doc, getFirestore } from 'firebase/firestore'
+import { LoaderMessage } from '@sharedComponents/LoaderMessage'
 
-const listHowWorks = [
-  {
-    id: 0,
-    name: 'Glaciares',
-    price: 1234,
-    category: 'Macro',
-    creator: 'Axel Valdez',
-    img: '/calafate-editadas/Calafate-glaciar-01.jpg'
-  },
-  {
-    id: 1,
-    name: 'Glaciares',
-    category: 'Paisajes',
-    price: 1234,
-    creator: 'Axel Valdez',
-    img: '/calafate-editadas/Calafate-glaciar-02.jpg'
-  },
-  {
-    id: 2,
-    name: 'Glaciares',
-    category: 'Alimentos',
-    price: 1234,
-    creator: 'Axel Valdez',
-    img: '/calafate-editadas/Calafate-glaciar-bandera.jpg'
-  }
-]
+type IListFirebase = Record<string, string | number>
 
 const MostBoughtView: React.FC = () => {
+  const [mostList, setMostList] = useState<IListFirebase[]>([])
+  const [loader, setLoader] = useState(true)
+
+  const fetchUserData = async (): Promise<void> => {
+    const db = getFirestore()
+    const queries = doc(db, 'creargtive', 'mostbought')
+    await getDoc(queries)
+      .then(response => {
+        setMostList(response.data()?.mostbought as IListFirebase[])
+      })
+      .finally(() => {
+        setLoader(false)
+      })
+  }
+
+  useEffect(() => {
+    void fetchUserData()
+  }, [])
+
   return (
-    <MostBoughtContainer>
-      <ItemDetail listContent={listHowWorks} />
-      <HeadingTwo>Estas son las imagenes mas compradas del dia.</HeadingTwo>
-    </MostBoughtContainer>
+    <>
+      {loader ? (
+        <LoaderMessage />
+      ) : (
+        <MostBoughtContainer>
+          <ItemDetail listContent={mostList} />
+          <HeadingTwo>Estas son las imagenes mas compradas del dia.</HeadingTwo>
+        </MostBoughtContainer>
+      )}
+    </>
   )
 }
 
