@@ -34,7 +34,7 @@ const listCategories = [
       },
       {
         subSection: 'Paisajes',
-        linkTo: '/category/paisajes'
+        linkTo: '/category/paisaje'
       },
       {
         subSection: 'Publicitaria',
