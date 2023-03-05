@@ -17,6 +17,9 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  a {
+    text-decoration: none;
+  }
 
   .cardInfoContainer {
     display: flex;

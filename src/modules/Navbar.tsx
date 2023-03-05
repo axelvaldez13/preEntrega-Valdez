@@ -6,10 +6,13 @@ import { Header } from '@moduleStyled//NavbarStyled'
 const Navbar: React.FC = () => {
   return (
     <Header>
-      <Link to={'/'} className="logo">
+      <Link to={'/home'} className="logo">
         <Logo />
       </Link>
       <ul className="userNav">
+        <li>
+          <Link to={'/category'}>Galeria</Link>
+        </li>
         <li>
           <Link to={'/category/paisajes'}>Paisajes</Link>
         </li>
@@ -27,16 +30,6 @@ const Navbar: React.FC = () => {
         <button className="buttonSvg">
           <CartWidget />
         </button>
-        <ul className="unLogged">
-          <li>
-            <Link to={'/category/publicitaria'}>Iniciar sesion</Link>
-          </li>
-          <li>
-            <Link to={'/category/publicitaria'} className="primary">
-              Registrarme
-            </Link>
-          </li>
-        </ul>
       </div>
     </Header>
   )

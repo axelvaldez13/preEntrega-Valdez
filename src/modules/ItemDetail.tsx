@@ -4,6 +4,7 @@ import theme from '@styles/Theme'
 import ItemCount from './ItemCount'
 import { CartContext } from '@utilities/CartContext'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 type IList = Record<string, string | number>
 interface IListDetail {
@@ -22,11 +23,13 @@ export const ItemDetail: React.FC<IListDetail> = ({ listContent }) => {
       {listContent.map((content, index) => {
         return (
           <Card key={index}>
-            <CardImage backgroundImage={content.imageUrl === null ? '' : content.imageUrl}>
-              <div>
-                <Paragraph className="title">{content.categoria}</Paragraph>
-              </div>
-            </CardImage>
+            <Link to={`/item/${content.id}`}>
+              <CardImage backgroundImage={content.imageUrl === null ? '' : content.imageUrl}>
+                <div>
+                  <Paragraph className="title">{content.categoria}</Paragraph>
+                </div>
+              </CardImage>
+            </Link>
             <div className="cardInfoContainer">
               <div className="cardName">
                 <Paragraph fontWeight={200}>
