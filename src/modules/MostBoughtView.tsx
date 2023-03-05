@@ -1,6 +1,6 @@
 import { MostBoughtContainer } from '@moduleStyled/MostBoughtStyled'
 import { HeadingTwo } from '@sharedComponents/Fonts'
-import ItemDetail from './ItemDetail'
+import ItemDetail from './ItemCardView'
 import { useEffect, useState } from 'react'
 import { getDoc, doc, getFirestore } from 'firebase/firestore'
 import { LoaderMessage } from '@sharedComponents/LoaderMessage'
@@ -16,7 +16,8 @@ const MostBoughtView: React.FC = () => {
     const queries = doc(db, 'creargtive', 'mostbought')
     await getDoc(queries)
       .then(response => {
-        setMostList(response.data()?.mostbought as IListFirebase[])
+        const data = response.data()?.mostbought as IListFirebase[]
+        setMostList(data)
       })
       .finally(() => {
         setLoader(false)
