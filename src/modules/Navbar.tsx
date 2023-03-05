@@ -24,9 +24,9 @@ const Navbar: React.FC = () => {
         </li>
       </ul>
       <div className="userActions">
-        <button className="buttonSvg">
+        <Link to={'/cart'} className="buttonSvg">
           <CartWidget />
-        </button>
+        </Link>
       </div>
     </Header>
   )
