@@ -1,5 +1,5 @@
 import Hero from '@modules/Hero'
-import ItemDetail from './ItemCardView'
+import ItemCardView from './ItemCardView'
 import { CardListView } from '@moduleStyled/ItemListContainerStyled'
 import { useEffect, useState } from 'react'
 import { getDoc, doc, getFirestore } from 'firebase/firestore'
@@ -43,7 +43,7 @@ const ItemListContainer: React.FC = () => {
         <LoaderMessage />
       ) : (
         <CardListView>
-          <ItemDetail listContent={itemsList} />
+          <ItemCardView listContent={itemsList} />
         </CardListView>
       )}
     </>

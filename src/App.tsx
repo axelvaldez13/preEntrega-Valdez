@@ -5,7 +5,8 @@ import { Layout } from '@moduleStyled/Layout'
 import { CartContextProvider } from '@utilities/CartContext'
 import Home from './Home'
 import ItemListContainer from '@modules/ItemListContainer'
-import ItemDetailContainer from '@modules/ItemDetailContainer'
+import ItemDetail from '@modules/ItemDetail'
+import CartContainer from '@modules/CartContainer'
 
 const App: React.FC = () => {
   return (
@@ -18,7 +19,8 @@ const App: React.FC = () => {
               <Route path="/home" element={<Home />} />
               <Route path="/category" element={<ItemListContainer />} />
               <Route path="/category/:categoryId" element={<ItemListContainer />} />
-              <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+              <Route path="/item/:itemId" element={<ItemDetail />} />
+              <Route path="/cart" element={<CartContainer />} />
               <Route path="*" element={<Home />} />
             </Routes>
             <Footer />
