@@ -1,6 +1,6 @@
 import { HeadingTwo } from '@sharedComponents/Fonts'
 import styled from 'styled-components'
-import theme from '../styles/Theme'
+import theme from '@styles/Theme'
 
 const LoaderContainer = styled.div`
   padding: 32px;

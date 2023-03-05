@@ -19,6 +19,7 @@
       "@sharedComponents/*": ["./src/sharedComponents/*"],
       "@utilities/*": ["./src/utilities/*"],
       "@modules/*": ["./src/modules/*"],
+      "@firebaseCfg/*": ["./src/firebaseCfg/*"],
       "@context/*": ["./src/context/*"],
       "@services/*": ["./src/services/*"],
       "@moduleStyled/*": ["./src/moduleStyled/*"],
