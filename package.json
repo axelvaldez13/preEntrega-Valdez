@@ -3,30 +3,30 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "lint-staged": {
+    "*.ts": [
+      "bash -c tsc --noEmit",
+      "npm run prettier:check",
+      "npm run prettier:fix",
+      "npm run lint:check",
+      "npm run lint:fix"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "bash -c tsc --noEmit",
-      "yarn prettier:check",
-      "yarn prettier:fix",
-      "yarn lint:check",
-      "yarn lint:fix"
-    ]
-  },
   "scripts": {
     "dev": "vite",
-    "prepare": "husky install",
     "build": "tsc && vite build",
-    "tsc": "tsc",
     "preview": "vite preview",
+    "tsc": "tsc",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "lint:check": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "^18.15.11",
