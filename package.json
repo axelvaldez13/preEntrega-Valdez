@@ -6,10 +6,10 @@
   "lint-staged": {
     "*.tsx": [
       "bash -c tsc --noEmit",
-      "npm run prettier:check",
-      "npm run prettier:fix",
-      "npm run lint:check",
-      "npm run lint:fix"
+      "npx prettier:check",
+      "npx prettier:fix",
+      "npx lint:check",
+      "npx lint:fix"
     ]
   },
   "husky": {
