@@ -9,7 +9,7 @@ Realizamos un proyecto basado en una ecommerce con ReactJs como base de frontend
 - [**1.0.0:** Entrega Final](VERSIONS.md#entrega-final-100)
 - [**1.1.0:** Recuperatorio Final](VERSIONS.md#recuperatorio-final-110)
 
-## 🔗 Video
+## Video
 
 [![videoCaptura](https://drive.google.com/file/d/1cAMEUKju3Y119A9VpCtBkHO3HHl-C5EM/view?usp=share_link)](https://drive.google.com/file/d/1cAMEUKju3Y119A9VpCtBkHO3HHl-C5EM/view?usp=share_link)
 

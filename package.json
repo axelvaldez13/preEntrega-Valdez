@@ -3,14 +3,25 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "lint-staged": {
+    "*.ts": [
+      "bash -c tsc --noEmit",
+      "npm run prettier:check",
+      "npm run prettier:fix",
+      "npm run lint:check",
+      "npm run lint:fix"
+    ]
+  },
   "scripts": {
     "dev": "vite",
-    "prepare": "husky install",
-    "lint": "eslint \"src/**/*.tsx\" --ignore-path .gitignore",
-    "prettier": "prettier \"src/**/*.tsx\" --write --ignore-path .gitignore",
     "build": "tsc && vite build",
+    "tsc": "tsc",
     "preview": "vite preview",
-    "tsc": "tsc"
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "^18.15.11",
@@ -36,6 +47,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.1",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
     "prettier": "^2.8.7",
     "typescript": "^5.0.3",
     "vite": "^4.2.1"
