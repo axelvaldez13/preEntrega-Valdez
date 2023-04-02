@@ -15,15 +15,17 @@ Realizamos un proyecto basado en una ecommerce con ReactJs como base de frontend
 
 ## Dependencias
 
-| dependencies      | Version   |
-| :---------------- | :-------- |
-| @types/node       | `8.15.11` |
-| esbuild           | `0.17.15` |
-| firebase          | `9.19.1`  |
-| react             | `18.2.0`  |
-| react-dom         | `18.2.0`  |
-| react-router-dom  | `6.10.0`  |
-| styled-components | `5.3.9`   |
+| dependencies           | Version   |
+| :--------------------- | :-------- |
+| @types/node            | `8.15.11` |
+| esbuild                | `0.17.15` |
+| firebase               | `9.19.1`  |
+| react                  | `18.2.0`  |
+| react-dom              | `18.2.0`  |
+| react-router-dom       | `6.10.0`  |
+| styled-components      | `5.3.9`   |
+| eslint-config-prettier | `8.8.0`   |
+| eslint-plugin-prettier | `4.2.1`   |
 
 | devDependencies                        | Version   |
 | :------------------------------------- | :-------- |
@@ -44,6 +46,7 @@ Realizamos un proyecto basado en una ecommerce con ReactJs como base de frontend
 | prettier                               | `2.8.7`   |
 | typescript                             | `5.0.3`   |
 | vite                                   | `4.2.1`   |
+| lint-staged                            | `13.2.0`  |
 
 ## Deployment
 
