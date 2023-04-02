@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "lint-staged": {
-    "*.ts": [
+    "*.{tsx,ts}": [
       "bash -c tsc --noEmit",
       "npm run prettier:check",
       "npm run prettier:fix",
