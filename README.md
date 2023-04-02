@@ -4,10 +4,10 @@ Realizamos un proyecto basado en una ecommerce con ReactJs como base de frontend
 
 ## Versiones
 
-- [**0.0.1:** Primera pre entrega](<VERSIONS.md#primera-pre-entrega-(0.0.1)>)
-- [**0.0.2:** Segunda pre entrega](<VERSIONS.md#segunda-pre-entrega-(0.0.2)>)
-- [**1.0.0:** Entrega Final](<VERSIONS.md#entrega-final-(1.0.0)>)
-- [**1.1.0:** Recuperatorio Final](<VERSIONS.md#recuperatorio-final-(1.1.0)>)
+- [**0.0.1:** Primera pre entrega](VERSIONS.md#primera-pre-entrega-001)
+- [**0.0.2:** Segunda pre entrega](VERSIONS.md#segunda-pre-entrega-002)
+- [**1.0.0:** Entrega Final](VERSIONS.md#entrega-final-100)
+- [**1.1.0:** Recuperatorio Final](VERSIONS.md#recuperatorio-final-110)
 
 ## 🔗 Video
 
