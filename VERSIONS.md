@@ -24,3 +24,4 @@
   - Breve description del proyecto
   - Sumar dependencias y versiones
   - Sumar deploy
+- Se instalo lint-staged y se modifico el package-json para que al hacer el comit revise el tipado y formatee el codigo.
