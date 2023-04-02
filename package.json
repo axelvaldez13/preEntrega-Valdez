@@ -11,10 +11,10 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "bash -c tsc --noEmit",
-      "npm run prettier:check",
-      "npm run prettier:fix",
-      "npm run lint:check",
-      "npm run lint:fix"
+      "yarn prettier:check",
+      "yarn prettier:fix",
+      "yarn lint:check",
+      "yarn lint:fix"
     ]
   },
   "scripts": {
