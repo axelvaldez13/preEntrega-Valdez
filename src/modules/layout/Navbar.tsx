@@ -1,7 +1,7 @@
 import { Logo } from '@sharedComponents/Logo'
-import CartWidget from './CartWidget'
+import CartWidget from '../CartWidget'
 import { Link } from 'react-router-dom'
-import { Header } from '@moduleStyled//NavbarStyled'
+import { Header } from '@moduleStyled/Layout'
 
 const Navbar: React.FC = () => {
   return (

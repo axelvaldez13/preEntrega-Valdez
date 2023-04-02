@@ -1,5 +1,5 @@
 import { Paragraph } from '@sharedComponents/Fonts'
-import { HighlightImage, CreatorHighlighInfo, HighlightContainer } from '@moduleStyled/HighLightStyled'
+import { HighlightImage, CreatorHighlighInfo, HighlightContainer } from '@moduleStyled/HomeStyled'
 import { useEffect, useState } from 'react'
 import { getDoc, doc, getFirestore } from 'firebase/firestore'
 import { LoaderMessage } from '@sharedComponents/LoaderMessage'

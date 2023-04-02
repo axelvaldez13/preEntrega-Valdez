@@ -1,4 +1,4 @@
-import { CategoryListContainer } from '@moduleStyled/CategoryListStyled'
+import { CategoryListContainer } from '@moduleStyled/HomeStyled'
 import { HeadingTwo, Paragraph } from '@sharedComponents/Fonts'
 import { Heart, Globe, User, GlassPlus } from '@sharedComponents/Icons'
 
