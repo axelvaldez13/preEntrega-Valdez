@@ -16,10 +16,10 @@
   },
   "lint-staged": {
     "*.tsx": [
-      "npm run prettier:check",
-      "npm run prettier:fix",
       "npm run lint:check",
-      "npm run lint:fix"
+      "npm run lint:fix",
+      "npm run prettier:check",
+      "npm run prettier:fix"
     ]
   },
   "dependencies": {
