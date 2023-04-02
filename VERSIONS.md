@@ -4,3 +4,9 @@
 - Se creo el componente NavBar donde se encuentra el menu
 - Se creo el componente NavBar donde se encuentra el menu CartWidget.js ubicado en el navbar
 - Se creo el componente ItemListContainer
+
+## Segunda pre entrega (0.0.2)
+
+- Se instalo la dependencia react-router-dom
+- Se actualizaron las rutas para el catalogo y el detalle del producto
+- Se mockeo la data de los productos a agregar proximanente cuando se agreguen los servicios de firebase para practicar las promises

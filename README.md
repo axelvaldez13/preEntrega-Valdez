@@ -5,12 +5,9 @@ Realizamos un proyecto basado en una ecommerce con ReactJs como base de frontend
 ## Versiones
 
 - [**0.0.1:** Primera pre entrega](<VERSIONS.md#primera-pre-entrega-(0.0.1)>)
-- **0.0.2: Segunda pre entrega**
-  - Item 1.1
-- **1.0.0: Entrega final**
-  - Item 1.1
-- **1.1.0: Recuperatorio entrega final**
-  - Item 1.1
+- [**0.0.2:** Segunda pre entrega](<VERSIONS.md#segunda-pre-entrega-(0.0.2)>)
+- [**1.0.0:** Entrega Final](<VERSIONS.md#entrega-final-(1.0.0)>)
+- [**1.1.0:** Recuperatorio Final](<VERSIONS.md#recuperatorio-final-(1.1.0)>)
 
 ## 🔗 Video
 
@@ -73,10 +70,3 @@ Y correr el siguiente script
 ```bash
  npm run dev
 ```
-
-## Primera pre entrega (0.0.1)
-
-- Se instalaron dependencias: eslint, typescript, husky, prettier, styled-components, types de styled-components
-- Se creo el componente NavBar donde se encuentra el menu
-- Se creo el componente NavBar donde se encuentra el menu CartWidget.js ubicado en el navbar
-- Se creo el componente ItemListContainer
