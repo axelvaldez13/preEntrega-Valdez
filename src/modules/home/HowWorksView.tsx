@@ -1,4 +1,4 @@
-import { HowWorksContainer } from '@moduleStyled/HowWorksStyled'
+import { HowWorksContainer } from '@moduleStyled/HomeStyled'
 import { HeadingTwo, Paragraph } from '@sharedComponents/Fonts'
 import { User, ShoppingCart, CurrencyDollar, Download } from '@sharedComponents/Icons'
 

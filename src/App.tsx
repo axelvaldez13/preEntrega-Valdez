@@ -1,32 +1,16 @@
-import Footer from '@modules/Footer'
-import Navbar from '@modules/Navbar'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Footer from '@modules/layout/Footer'
+import Navbar from '@modules/layout/Navbar'
 import { Layout } from '@moduleStyled/Layout'
-import { CartContextProvider } from '@utilities/CartContext'
-import Home from './Home'
-import ItemListContainer from '@modules/ItemListContainer'
-import ItemDetail from '@modules/ItemDetail'
-import CartContainer from '@modules/CartContainer'
+import { Outlet } from 'react-router-dom'
 
 const App: React.FC = () => {
   return (
     <>
-      <BrowserRouter>
-        <CartContextProvider>
-          <Navbar />
-          <Layout>
-            <Routes>
-              <Route path="/home" element={<Home />} />
-              <Route path="/category" element={<ItemListContainer />} />
-              <Route path="/category/:categoryId" element={<ItemListContainer />} />
-              <Route path="/item/:itemId" element={<ItemDetail />} />
-              <Route path="/cart" element={<CartContainer />} />
-              <Route path="*" element={<Home />} />
-            </Routes>
-            <Footer />
-          </Layout>
-        </CartContextProvider>
-      </BrowserRouter>
+      <Navbar />
+      <Layout>
+        <Outlet />
+        <Footer />
+      </Layout>
     </>
   )
 }

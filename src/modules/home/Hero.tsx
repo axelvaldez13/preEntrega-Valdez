@@ -1,6 +1,6 @@
 import { HeadingOne, HeadingTwo } from '@sharedComponents/Fonts'
 import theme from '@styles/Theme'
-import { HeroContainer } from '@moduleStyled/HeroStyled'
+import { HeroContainer } from '@moduleStyled/HomeStyled'
 
 interface IHero {
   title: string

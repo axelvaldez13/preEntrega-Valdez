@@ -1,6 +1,6 @@
-import { MostBoughtContainer } from '@moduleStyled/MostBoughtStyled'
+import { MostBoughtContainer } from '@moduleStyled/HomeStyled'
 import { HeadingTwo } from '@sharedComponents/Fonts'
-import ItemCardView from '@modules/ItemCardView'
+import ItemCardView from '@modules/ItemList'
 import { useEffect, useState } from 'react'
 import { getDoc, doc, getFirestore } from 'firebase/firestore'
 import { LoaderMessage } from '@sharedComponents/LoaderMessage'
