@@ -16,7 +16,7 @@
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/recommended-requiring-type-checking"],
       "parserOptions": {
-        "project": ["./tsconfig.json"]
+        "project": "./tsconfig.json"
       },
       "rules": {
         "@typescript-eslint/no-unused-vars": "error",
@@ -35,10 +35,6 @@
       }
     }
   ],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
   "globals": { "React": true },
   "plugins": ["react", "prettier"],
   "rules": {
