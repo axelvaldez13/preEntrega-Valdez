@@ -1,8 +1,8 @@
-import HowWorksView from '@modules/HowWorksView'
-import MostBoughtView from '@modules/MostBoughtView'
-import CategoryListView from '@modules/CategoryListView'
-import HighlightView from '@modules/HighlightView'
-import Hero from '@modules/Hero'
+import HowWorksView from '@modules/home/HowWorksView'
+import MostBoughtView from '@modules/home/MostBoughtView'
+import CategoryListView from '@modules/home/CategoryListView'
+import HighlightView from '@modules/home/HighlightView'
+import Hero from '@modules/home/Hero'
 
 const Home: React.FC = () => {
   return (

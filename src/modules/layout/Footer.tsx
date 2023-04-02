@@ -1,6 +1,6 @@
 import { Logo } from '@sharedComponents/Logo'
 import { Paragraph } from '@sharedComponents/Fonts'
-import { FooterView } from '@moduleStyled/FooterStyled'
+import { FooterView } from '@moduleStyled/Layout'
 import { Link } from 'react-router-dom'
 
 const listCategories = [

@@ -13,7 +13,7 @@ interface IOrder {
   items: Array<Record<string, string | number>> | undefined
   total: number
 }
-const CartContainer: React.FC = () => {
+const Checkout: React.FC = () => {
   const contextProvider = useContext(CartContext)
   const hasContent = typeof contextProvider !== 'undefined' && contextProvider?.cartList.length > 0
   const [loader, setLoader] = useState(false)
@@ -126,4 +126,4 @@ const CartContainer: React.FC = () => {
   )
 }
 
-export default CartContainer
+export default Checkout
