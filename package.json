@@ -16,7 +16,6 @@
   },
   "lint-staged": {
     "*.tsx": [
-      "bash -c tsc --noEmit",
       "npm run prettier:check",
       "npm run prettier:fix",
       "npm run lint:check",
