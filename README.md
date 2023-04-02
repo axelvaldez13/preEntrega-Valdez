@@ -4,7 +4,7 @@ Realizamos un proyecto basado en una ecommerce con ReactJs como base de frontend
 
 ## Versiones
 
-- [**0.0.1:** Primera pre entrega](<VERSIONS.md#primera-pre-entrega-(0.0.1)>)
+- [**0.0.1:** Primera pre entrega](<#primera-pre-entrega-(0.0.1)>)
 - **0.0.2: Segunda pre entrega**
   - Item 1.1
 - **1.0.0: Entrega final**
