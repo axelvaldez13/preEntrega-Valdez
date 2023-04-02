@@ -6,10 +6,10 @@
   "lint-staged": {
     "*.tsx": [
       "bash -c tsc --noEmit",
-      "npx prettier --check .",
-      "npx prettier --write .",
-      "npx eslint .",
-      "npx eslint --fix ."
+      "prettier --check .",
+      "prettier --write .",
+      "eslint .",
+      "eslint --fix ."
     ]
   },
   "husky": {
