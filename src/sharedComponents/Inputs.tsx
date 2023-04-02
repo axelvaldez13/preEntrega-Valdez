@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import theme from '../styles/Theme'
-import { ChangeEvent } from 'react'
+import { type ChangeEvent } from 'react'
 
 const InputView = styled.div`
   position: relative;
