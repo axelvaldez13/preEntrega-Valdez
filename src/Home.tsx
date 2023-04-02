@@ -5,7 +5,6 @@ import HighlightView from '@modules/HighlightView'
 import Hero from '@modules/Hero'
 
 const Home: React.FC = () => {
-  console.log('test')
   return (
     <>
       <Hero title="Descubre un banco de imágenes hecho en Argentina" subtitle="Compra stocks de imagenes para utilizar en tu emprendimiento en pesos" />
