@@ -3,8 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "*.tsx": [
+    "*.{ts,tsx}": [
       "bash -c tsc --noEmit",
       "npm run prettier:check",
       "npm run prettier:fix",
