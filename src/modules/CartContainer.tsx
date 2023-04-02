@@ -1,5 +1,5 @@
 import { Container, ListCart, ListCartImage } from '@moduleStyled/CartContainerStyled'
-import { ChangeEvent, useContext, useState } from 'react'
+import { type ChangeEvent, useContext, useState } from 'react'
 import theme from '@styles/Theme'
 import { CartContext } from '@utilities/CartContext'
 import { HeadingOne, HeadingThree, HeadingTwo, Paragraph } from '@sharedComponents/Fonts'
