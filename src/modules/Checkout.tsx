@@ -1,13 +1,14 @@
-import { Container, ListCart, ListCartImage } from '@moduleStyled/CartContainerStyled'
-import { type ChangeEvent, useContext, useState } from 'react'
+import { Container, EmptyCheckoutGrid, ListCart, ListCartImage, TitleHeading } from '@moduleStyled/CheckoutStyled'
+import { type ChangeEvent, useContext, useState, useEffect } from 'react'
 import theme from '@styles/Theme'
 import { CartContext } from '@utilities/CartContext'
 import { HeadingOne, HeadingThree, HeadingTwo, Paragraph } from '@sharedComponents/Fonts'
 import { Input } from '@sharedComponents/Inputs'
 import { Button } from '@sharedComponents/Buttons'
-import { getFirestore, collection, addDoc } from 'firebase/firestore'
+import { getFirestore, collection, addDoc, doc, getDoc } from 'firebase/firestore'
 import { LoaderFixed } from '@sharedComponents/LoaderMessage'
 import { type IItemList } from '@typesProyect/ItemDetailTypes'
+import ItemList from './ItemList'
 
 interface IOrder {
   buyer: { name: string; email: string }
@@ -17,6 +18,7 @@ interface IOrder {
 
 const Checkout: React.FC = () => {
   const contextProvider = useContext(CartContext)
+  const [mostList, setMostList] = useState<IItemList[]>([])
   const hasContent = typeof contextProvider !== 'undefined' && contextProvider?.cartList.length > 0
   const [loader, setLoader] = useState(false)
   const [isOrdered, setOrdered] = useState(false)
@@ -45,6 +47,23 @@ const Checkout: React.FC = () => {
       })
   }
 
+  const getMostList = async (): Promise<void> => {
+    setLoader(true)
+    const db = getFirestore()
+    const mostboughtQueries = doc(db, 'creargtive', 'mostbought')
+    await getDoc(mostboughtQueries)
+      .then(response => {
+        setMostList(response.data()?.mostbought as IItemList[])
+      })
+      .finally(() => {
+        setLoader(false)
+      })
+  }
+
+  useEffect(() => {
+    void getMostList()
+  }, [])
+
   return (
     <>
       <Container>
@@ -59,15 +78,15 @@ const Checkout: React.FC = () => {
           </div>
         ) : (
           <>
-            <div>
+            <TitleHeading>
               <HeadingOne>Carrito</HeadingOne>
               <HeadingTwo color={theme.color.gray[400]} fontWeight={200}>
                 {hasContent
                   ? 'Revisa todas las imagenes que tenes en tu carrito y llena el formulario para confirmar la compra.'
-                  : 'No tenes agregado ninguna imagen, por favor, elige una imagen que mas te guste.'}
+                  : 'No tenes ninguna imagen agregado al carrito. No te preocupes, hoy te podemos recomendar las imagenes mas buscadas del mes'}
               </HeadingTwo>
-            </div>
-            {hasContent && (
+            </TitleHeading>
+            {hasContent ? (
               <div className="columnsCart">
                 <div className="rowsCart">
                   {contextProvider?.cartList.map((list, index) => {
@@ -120,6 +139,10 @@ const Checkout: React.FC = () => {
                   </form>
                 </div>
               </div>
+            ) : (
+              <EmptyCheckoutGrid>
+                <ItemList listContent={mostList} />
+              </EmptyCheckoutGrid>
             )}
           </>
         )}
