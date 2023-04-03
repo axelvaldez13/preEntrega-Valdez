@@ -1,7 +1,7 @@
 import { Paragraph } from '@sharedComponents/Fonts'
 import { Card, CardImage } from '@moduleStyled/Layout'
 import theme from '@styles/Theme'
-import ItemCount from './ItemCount'
+import AddItemButton from './AddItemButton'
 import { CartContext } from '@utilities/CartContext'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
@@ -39,7 +39,7 @@ export const ItemList: React.FC<IListDetail> = ({ listContent }) => {
                   ${content.precio} ARS
                 </Paragraph>
               </div>
-              <ItemCount
+              <AddItemButton
                 onAddCart={() => {
                   onAddCart(content)
                 }}

@@ -25,7 +25,7 @@ interface IHighlight {
 }
 
 export const Container = styled.div`
-  padding: 3rem 1.5rem;
+  padding: 2rem 1.5rem;
   flex: 1;
 
   .columnsCart {
@@ -72,4 +72,43 @@ export const ListCartImage = styled.div<IHighlight>`
   width: 5rem;
   height: 5rem;
   border-radius: 0.5rem;
+`
+
+export const TitleHeading = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
+  > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+  }
+
+  @media screen and (min-width: 1366px) {
+    width: 60%;
+  }
+`
+
+export const EmptyCheckoutGrid = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+  }
+
+  @media screen and (min-width: 1366px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+
+    > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0 * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0 * var(--tw-space-y-reverse));
+    }
+  }
 `
