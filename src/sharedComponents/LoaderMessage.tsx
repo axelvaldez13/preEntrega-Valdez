@@ -5,8 +5,15 @@ import theme from '@styles/Theme'
 const LoaderContainer = styled.div`
   padding: 32px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
+  z-index: 999999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: ${theme.color.gray[900]};
   flex: 1;
+  top: 0;
   align-items: center;
 
   .loader {
@@ -83,7 +90,7 @@ const LoaderContainer = styled.div`
   }
 `
 
-export const LoaderMessage: React.FC = () => {
+export const LoaderFixed: React.FC = () => {
   return (
     <LoaderContainer>
       <div className="loader">

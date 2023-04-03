@@ -28,6 +28,7 @@ const listHowWorks = [
     text: 'Una vez acreditado el pago recibiras la descarga.'
   }
 ]
+
 const HowWorksView: React.FC = () => {
   return (
     <HowWorksContainer>
