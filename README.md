@@ -44,6 +44,7 @@ Realizamos un proyecto basado en una ecommerce con ReactJs como base de frontend
 | prettier                               | `2.8.7`   |
 | typescript                             | `5.0.3`   |
 | vite                                   | `4.2.1`   |
+| lint-staged                            | `13.2.0`  |
 
 ## Deployment
 

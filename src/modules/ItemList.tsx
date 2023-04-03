@@ -5,16 +5,16 @@ import ItemCount from './ItemCount'
 import { CartContext } from '@utilities/CartContext'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { type IItemList } from '@typesProyect/ItemDetailTypes'
 
-type IList = Record<string, string | number>
 interface IListDetail {
-  listContent: IList[]
+  listContent: IItemList[]
 }
 
-export const ItemCardView: React.FC<IListDetail> = ({ listContent }) => {
+export const ItemList: React.FC<IListDetail> = ({ listContent }) => {
   const contextProvider = useContext(CartContext)
 
-  const onAddCart = (newProduct: IList): void => {
+  const onAddCart = (newProduct: IItemList): void => {
     contextProvider?.setNewProduct([...contextProvider?.cartList, newProduct])
   }
 
@@ -23,7 +23,7 @@ export const ItemCardView: React.FC<IListDetail> = ({ listContent }) => {
       {listContent.map((content, index) => {
         return (
           <Card key={index}>
-            <Link to={`/item/${content.id}`}>
+            <Link to={`/item/${content.id as number}`}>
               <CardImage backgroundImage={content.imageUrl === null ? '' : content.imageUrl}>
                 <div>
                   <Paragraph className="title">{content.categoria}</Paragraph>
@@ -52,4 +52,4 @@ export const ItemCardView: React.FC<IListDetail> = ({ listContent }) => {
   )
 }
 
-export default ItemCardView
+export default ItemList

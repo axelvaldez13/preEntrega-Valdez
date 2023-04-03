@@ -6,13 +6,15 @@ import { HeadingOne, HeadingThree, HeadingTwo, Paragraph } from '@sharedComponen
 import { Input } from '@sharedComponents/Inputs'
 import { Button } from '@sharedComponents/Buttons'
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
-import { LoaderMessage } from '@sharedComponents/LoaderMessage'
+import { LoaderFixed } from '@sharedComponents/LoaderMessage'
+import { type IItemList } from '@typesProyect/ItemDetailTypes'
 
 interface IOrder {
   buyer: { name: string; email: string }
-  items: Array<Record<string, string | number>> | undefined
+  items: IItemList[] | undefined
   total: number
 }
+
 const Checkout: React.FC = () => {
   const contextProvider = useContext(CartContext)
   const hasContent = typeof contextProvider !== 'undefined' && contextProvider?.cartList.length > 0
@@ -47,7 +49,7 @@ const Checkout: React.FC = () => {
     <>
       <Container>
         {loader ? (
-          <LoaderMessage />
+          <LoaderFixed />
         ) : isOrdered ? (
           <div>
             <HeadingOne>Felicitaciones</HeadingOne>
@@ -72,7 +74,7 @@ const Checkout: React.FC = () => {
                     return (
                       <ListCart key={index}>
                         <div className="cartInfo">
-                          <ListCartImage backgroundImage={list.imageUrl as string} />
+                          <ListCartImage backgroundImage={list.imageUrl} />
                           <Paragraph>
                             {list.name} - {list.autor}
                           </Paragraph>
