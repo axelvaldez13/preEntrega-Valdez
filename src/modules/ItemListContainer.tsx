@@ -1,15 +1,14 @@
 import Hero from '@modules/home/Hero'
-import ItemCardView from './ItemList'
+import ItemList from './ItemList'
 import { CardListView } from '@moduleStyled/ItemListStyled'
 import { useEffect, useState } from 'react'
 import { getDoc, doc, getFirestore } from 'firebase/firestore'
-import { LoaderMessage } from '@sharedComponents/LoaderMessage'
+import { LoaderFixed } from '@sharedComponents/LoaderMessage'
 import { useParams } from 'react-router-dom'
-
-type IListFirebase = Record<string, string | number>
+import { type IItemList } from '@typesProyect/ItemDetailTypes'
 
 const ItemListContainer: React.FC = () => {
-  const [itemsList, setItemList] = useState<IListFirebase[]>([])
+  const [itemsList, setItemList] = useState<IItemList[]>([])
   const [loader, setLoader] = useState(true)
   const { categoryId } = useParams()
 
@@ -18,9 +17,9 @@ const ItemListContainer: React.FC = () => {
     const queries = doc(db, 'creargtive', 'images')
     await getDoc(queries)
       .then(response => {
-        let data = response.data()?.itemList as IListFirebase[]
+        let data = response.data()?.itemList as IItemList[]
         if (typeof categoryId !== 'undefined') {
-          const responseData = response.data()?.itemList as IListFirebase[]
+          const responseData = response.data()?.itemList as IItemList[]
           data = responseData.filter(id => {
             return id.categoria === categoryId
           })
@@ -40,10 +39,10 @@ const ItemListContainer: React.FC = () => {
     <>
       <Hero title="Descubre un banco de imágenes hecho en Argentina" subtitle="Compra stocks de imagenes para utilizar en tu emprendimiento en pesos" />
       {loader ? (
-        <LoaderMessage />
+        <LoaderFixed />
       ) : (
         <CardListView>
-          <ItemCardView listContent={itemsList} />
+          <ItemList listContent={itemsList} />
         </CardListView>
       )}
     </>
