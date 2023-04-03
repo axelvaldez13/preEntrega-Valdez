@@ -13,6 +13,7 @@ const LoaderContainer = styled.div`
   height: 100%;
   background: ${theme.color.gray[900]};
   flex: 1;
+  left: 0;
   top: 0;
   align-items: center;
 
