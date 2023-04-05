@@ -28,6 +28,7 @@
 - Se refactorizo el App.tsx eliminando alli el context y el router para insertarlo en el main.tsx de manera actualizada a la documentacion de react-router-dom
 - Se movieron a diferentes carpetas los modulos de la home, layout y entregables para el proyecto (disclaimer: el navbar.tsx se encuentra en la carpeta layout)
 - Se eliminaron archivos de styled innecesarios para centrarlos en un solo archivo (HomeStyled, ItemListStyled, ItemDetailStyled y CartStyled)
+- Se agrego el boton secundario para ir al carrito directamente desde el detalle del producto
 - Se refactorizo las primeras llamadas a la home uniendola en una promise all sola y se refactorizo el tipado de los servicios
 - Se actualizaron las siguientes dependencias:
 
