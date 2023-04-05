@@ -1,38 +1,20 @@
-import { ImageDetail } from '@moduleStyled/ItemDetailStyled'
-import { useContext } from 'react'
-import { HeadingThree, HeadingTwo, Paragraph } from '@sharedComponents/Fonts'
-import theme from '@styles/Theme'
-import { CartContext } from '@utilities/CartContext'
-import { Button } from '@sharedComponents/Buttons'
+import { Container, ImageDetail } from '@moduleStyled/ItemDetailStyled'
 import { type IItemList } from '@typesProyect/ItemDetailTypes'
+import AddItemButton from './AddItemButton'
+import Description from './Description'
 
 const ItemDetail: React.FC<{ item: IItemList }> = ({ item }) => {
-  const { imageUrl, name, precio, autor, categoria } = item
-
-  const contextProvider = useContext(CartContext)
-  const onAddCart = (newProduct: IItemList): void => {
-    contextProvider?.setNewProduct([...contextProvider?.cartList, newProduct])
-  }
+  const { imageUrl } = item
 
   return (
     <>
-      <ImageDetail backgroundImage={imageUrl} />
-      <div className="infoPhoto">
-        <HeadingTwo>{name}</HeadingTwo>
-        <HeadingThree fontWeight={600} color={theme.color.primary[400]}>
-          ${precio}
-        </HeadingThree>
-        <Paragraph fontWeight={400}>
-          Tomadas por {autor}, en la categoria: {categoria}
-        </Paragraph>
-        <Button
-          onClick={() => {
-            onAddCart({ imageUrl, name, autor, categoria })
-          }}
-        >
-          Agregar al carrito
-        </Button>
-      </div>
+      <Container>
+        <ImageDetail backgroundImage={imageUrl} />
+        <div className="infoPhoto">
+          <Description item={item} />
+          <AddItemButton item={item} />
+        </div>
+      </Container>
     </>
   )
 }

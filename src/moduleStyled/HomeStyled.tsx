@@ -8,7 +8,7 @@ interface IHighlight {
 export const CategoryListContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 4rem 1.5rem;
+  padding: 4rem 2rem;
 
   .columnContainer {
     display: flex;
@@ -58,7 +58,7 @@ export const CategoryListContainer = styled.div`
 `
 
 export const MostBoughtContainer = styled.div`
-  padding: 5rem 1.5rem;
+  padding: 5rem 2rem;
   display: flex;
   flex-direction: column-reverse;
 
@@ -72,7 +72,7 @@ export const MostBoughtContainer = styled.div`
 export const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: 2em;
 
   > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
@@ -104,7 +104,7 @@ export const CreatorHighlighInfo = styled.div`
 export const HighlightContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   justify-content: end;
   @media screen and (min-width: 768px) {
     display: grid;
@@ -126,7 +126,7 @@ export const HowWorksContainer = styled.div`
   display: flex;
   color: #fff;
   flex-direction: column;
-  padding: 4rem 1.5rem;
+  padding: 4rem 2rem;
 
   .textHeading {
     text-align: center;

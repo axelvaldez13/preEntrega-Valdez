@@ -18,15 +18,17 @@ export const Button = styled.button`
 `
 
 export const SecondaryButton = styled.button`
-  background: ${theme.color.white};
   padding: 12px 24px;
-  color: ${theme.color.gray[400]};
-  border: 1px solid ${theme.color.gray[400]};
+  color: ${theme.color.primary[400]};
+  background: ${theme.color.gray[800]};
+  border: 1px solid ${theme.color.primary[400]};
   cursor: pointer;
   font: 700 12px/16px 'Montserrat Alternates', sans-serif;
   border-radius: 4px;
   display: flex;
   align-items: center;
+  text-align: center;
+  justify-content: center;
 
   .icon {
     width: 16px;
@@ -35,8 +37,37 @@ export const SecondaryButton = styled.button`
   }
 
   :hover {
-    background: ${theme.color.gray[400]};
-    color: ${theme.color.white};
+    color: ${theme.color.primary[200]};
+    background: ${theme.color.gray[800]};
+    border: 1px solid ${theme.color.primary[200]};
+    transition: 0.5s ease-in-out background;
+  }
+`
+
+export const SecondaryLink = styled.a`
+  padding: 12px 24px;
+  color: ${theme.color.primary[400]};
+  background: ${theme.color.gray[800]};
+  border: 1px solid ${theme.color.primary[400]};
+  cursor: pointer;
+  font: 700 12px/16px 'Montserrat Alternates', sans-serif;
+  border-radius: 4px;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+
+  :hover {
+    color: ${theme.color.primary[200]};
+    background: ${theme.color.gray[800]};
+    border: 1px solid ${theme.color.primary[200]};
     transition: 0.5s ease-in-out background;
   }
 `
