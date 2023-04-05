@@ -54,10 +54,19 @@ export const CardImage = styled.div<ICardImage>`
     border-radius: 4px;
   }
 `
-
+export const Badge = styled.div`
+  p {
+    margin: 8px;
+    background: ${theme.color.primary[600]};
+    padding: 8px;
+    color: #fff;
+    font: ${theme.font.fontSm};
+    border-radius: 4px;
+  }
+`
 export const FooterView = styled.footer`
   background: ${theme.color.gray[900]};
-  padding: 3rem 1.5rem;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   .footerLogo {
@@ -117,7 +126,8 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem 2rem;
+  border-bottom: 0.5px solid ${theme.color.gray[600]};
 
   .logo {
     display: flex;
@@ -137,6 +147,7 @@ export const Header = styled.header`
       > li > a {
         display: flex;
         cursor: pointer;
+        text-decoration: none;
         color: ${theme.color.gray[400]};
         margin: 0 0.5rem;
 

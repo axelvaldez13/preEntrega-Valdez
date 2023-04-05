@@ -1,21 +1,31 @@
-import { ItemCountContainer } from '@moduleStyled/ItemDetailStyled'
-import { ShoppingCart } from '@sharedComponents/Icons'
+import { ButtonsRow } from '@moduleStyled/ItemDetailStyled'
+import { Button, SecondaryButton } from '@sharedComponents/Buttons'
+import { Link } from 'react-router-dom'
+import { type IItemList } from '@typesProyect/ItemDetailTypes'
+import { useContext } from 'react'
+import { CartContext } from '@utilities/CartContext'
 
-interface IAddItemButton {
-  onAddCart: (newProduct: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
-}
+const AddItemButton: React.FC<{ item: IItemList }> = ({ item }) => {
+  const { imageUrl, name, precio, autor, categoria } = item
 
-const AddItemButton: React.FC<IAddItemButton> = (props: IAddItemButton) => {
+  const contextProvider = useContext(CartContext)
+  const onAddCart = (newProduct: IItemList): void => {
+    contextProvider?.setNewProduct([...contextProvider?.cartList, newProduct])
+  }
+
   return (
-    <ItemCountContainer>
-      <button
-        onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-          props.onAddCart(e)
+    <ButtonsRow>
+      <Button
+        onClick={() => {
+          onAddCart({ imageUrl, name, autor, precio, categoria })
         }}
       >
-        <ShoppingCart />
-      </button>
-    </ItemCountContainer>
+        Agregar al carrito
+      </Button>
+      <Link to={'/cart'}>
+        <SecondaryButton>Ir al carrito</SecondaryButton>
+      </Link>
+    </ButtonsRow>
   )
 }
 

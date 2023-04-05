@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import theme from '@styles/Theme'
 
 export const ListCart = styled.div`
-  padding: 2rem 1.5rem;
+  padding: 2rem;
   display: flex;
   background: ${theme.color.gray[700]};
   border-radius: 0.5rem;
@@ -25,7 +25,7 @@ interface IHighlight {
 }
 
 export const Container = styled.div`
-  padding: 2rem 1.5rem;
+  padding: 2rem;
   flex: 1;
 
   .columnsCart {
