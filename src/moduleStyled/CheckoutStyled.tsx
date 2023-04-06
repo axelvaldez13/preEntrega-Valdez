@@ -9,6 +9,12 @@ export const ListCart = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  .priceInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+
   .cartInfo {
     display: flex;
     align-items: center;
@@ -100,7 +106,7 @@ export const EmptyCheckoutGrid = styled.div`
     margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
   }
 
-  @media screen and (min-width: 1366px) {
+  @media screen and (min-width: 768px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;

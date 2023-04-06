@@ -1,14 +1,13 @@
 import { ShoppingCart } from '@sharedComponents/Icons'
 import { WidgetCount } from '@moduleStyled/CartWidgetStyled'
-import { useContext } from 'react'
-import { CartContext } from '@utilities/CartContext'
+import { type Context, useCartContext } from '@utilities/CartContext'
 
 const CartWidget: React.FC = () => {
-  const contextProvider = useContext(CartContext)
+  const { cartList } = useCartContext() as Context
 
   return (
     <>
-      {contextProvider?.cartList.length !== 0 && <WidgetCount>{contextProvider?.cartList.length}</WidgetCount>}
+      {cartList.length !== 0 && <WidgetCount>{cartList.length}</WidgetCount>}
       <ShoppingCart />
     </>
   )
