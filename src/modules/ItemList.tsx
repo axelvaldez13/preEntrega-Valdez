@@ -1,8 +1,7 @@
 import { HeadingThree, Paragraph } from '@sharedComponents/Fonts'
 import { Badge, Card, CardImage } from '@moduleStyled/Layout'
 import theme from '@styles/Theme'
-import { CartContext } from '@utilities/CartContext'
-import { useContext } from 'react'
+import { type Context, useCartContext } from '@utilities/CartContext'
 import { Link } from 'react-router-dom'
 import { type IItemList } from '@typesProyect/ItemDetailTypes'
 import { ItemCountContainer } from '@moduleStyled/ItemDetailStyled'
@@ -12,16 +11,25 @@ interface IListDetail {
   listContent: IItemList[]
 }
 
-export const ItemList: React.FC<IListDetail> = ({ listContent }) => {
-  const contextProvider = useContext(CartContext)
-
+const ItemList: React.FC<IListDetail> = ({ listContent }) => {
+  const { setNewProduct } = useCartContext() as Context
   const onAddCart = (newProduct: IItemList): void => {
-    contextProvider?.setNewProduct([...contextProvider?.cartList, newProduct])
+    setNewProduct({ ...newProduct, cantidad: newProduct.cantidad })
   }
 
   return (
     <>
       {listContent.map((content, index) => {
+        const itemContent = {
+          imageUrl: content.imageUrl,
+          name: content.name,
+          id: content.id,
+          precio: content.precio,
+          categoria: content.categoria,
+          autor: content.autor,
+          cantidad: 1
+        }
+
         return (
           <Card key={index}>
             <Link to={`/item/${content.id as number}`}>
@@ -43,7 +51,7 @@ export const ItemList: React.FC<IListDetail> = ({ listContent }) => {
               <ItemCountContainer>
                 <button
                   onClick={() => {
-                    onAddCart(content)
+                    onAddCart(itemContent)
                   }}
                 >
                   <ShoppingCart />
@@ -56,5 +64,4 @@ export const ItemList: React.FC<IListDetail> = ({ listContent }) => {
     </>
   )
 }
-
 export default ItemList

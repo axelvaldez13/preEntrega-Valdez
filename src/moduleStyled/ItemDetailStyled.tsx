@@ -16,6 +16,21 @@ export const Container = styled.div`
     grid-gap: 2rem;
   }
 
+  .quantityTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid ${theme.color.gray[700]};
+    border-top: 1px solid ${theme.color.gray[700]};
+
+    > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+    }
+  }
+
   .infoPhoto {
     padding: 2rem;
     > :not([hidden]) ~ :not([hidden]) {
@@ -31,6 +46,21 @@ export const Container = styled.div`
 `
 
 export const ButtonsRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+  }
+
+  button,
+  a {
+    width: 100%;
+  }
+`
+export const ButtonsColumn = styled.div`
   display: flex;
   > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
@@ -115,6 +145,36 @@ export const DescriptionContainer = styled.div`
       --tw-space-y-reverse: 0;
       margin-left: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
       margin-right: calc(0.5rem * var(--tw-space-y-reverse));
+    }
+  }
+`
+
+export const ItemQuantityContainer = styled.div`
+  border: 1px solid ${theme.color.gray[700]};
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: ${theme.color.gray[400]};
+  border-radius: 0.2rem;
+
+  > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-left: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-right: calc(1rem * var(--tw-space-y-reverse));
+  }
+
+  button {
+    background: none;
+    color: ${theme.color.gray[400]};
+    border: none;
+    background: ${theme.color.gray[700]};
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+
+    :hover {
+      background: ${theme.color.gray[900]};
+      transition: 0.5s ease-in-out background;
+      cursor: pointer;
     }
   }
 `
