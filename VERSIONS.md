@@ -30,6 +30,8 @@
 - Se eliminaron archivos de styled innecesarios para centrarlos en un solo archivo (HomeStyled, ItemListStyled, ItemDetailStyled y CartStyled)
 - Se agrego el boton secundario para ir al carrito directamente desde el detalle del producto
 - Se refactorizo las primeras llamadas a la home uniendola en una promise all sola y se refactorizo el tipado de los servicios
+- Se fixeo el carrito al agregar duplicados y se sumo el total del carrito
+- Se agregaron mensajes de errores en caso que no haya ningun dato ni los mails coincidan
 - Se actualizaron las siguientes dependencias:
 
 | dependencias                           | Vieja version | Actualizada |

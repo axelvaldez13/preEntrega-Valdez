@@ -5,4 +5,5 @@ export interface IItemList {
   precio?: number
   categoria: string
   autor: string
+  cantidad: number
 }

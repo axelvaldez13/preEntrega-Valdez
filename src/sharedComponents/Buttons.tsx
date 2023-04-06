@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import theme from '../styles/Theme'
 
-export const Button = styled.button`
-  background: ${theme.color.primary[600]};
+export const Button = styled.button<{ isDisabled?: boolean }>`
+  background: ${props =>
+    typeof props.isDisabled !== 'undefined' ? (props.isDisabled ? theme.color.gray[400] : theme.color.primary[600]) : theme.color.primary[600]};
   padding: 12px 24px;
   width: 100%;
   color: ${theme.color.white};
@@ -12,7 +13,9 @@ export const Button = styled.button`
   border-radius: 4px;
 
   :hover {
-    background: ${theme.color.primary[800]};
+    cursor: ${props => (typeof props.isDisabled !== 'undefined' ? (props.isDisabled ? 'not-allowed' : 'pointer') : 'pointer')};
+    background: ${props =>
+      typeof props.isDisabled !== 'undefined' ? (props.isDisabled ? theme.color.gray[400] : theme.color.primary[800]) : theme.color.primary[800]};
     transition: 0.5s ease-in-out background;
   }
 `
@@ -38,9 +41,8 @@ export const SecondaryButton = styled.button`
 
   :hover {
     color: ${theme.color.primary[200]};
-    background: ${theme.color.gray[800]};
-    border: 1px solid ${theme.color.primary[200]};
-    transition: 0.5s ease-in-out background;
+    opacity: 0.5;
+    transition: 0.5s ease-in-out opacity;
   }
 `
 
@@ -66,8 +68,7 @@ export const SecondaryLink = styled.a`
 
   :hover {
     color: ${theme.color.primary[200]};
-    background: ${theme.color.gray[800]};
-    border: 1px solid ${theme.color.primary[200]};
-    transition: 0.5s ease-in-out background;
+    opacity: 0.5;
+    transition: 0.5s ease-in-out opacity;
   }
 `
