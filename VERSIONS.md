@@ -32,6 +32,7 @@
 - Se refactorizo las primeras llamadas a la home uniendola en una promise all sola y se refactorizo el tipado de los servicios
 - Se fixeo el carrito al agregar duplicados y se sumo el total del carrito
 - Se agregaron mensajes de errores en caso que no haya ningun dato ni los mails coincidan
+- Se refactorizo los archivos que utilizaban el context y se agrego un archivo llamado "useCartContext"
 - Se actualizaron las siguientes dependencias:
 
 | dependencias                           | Vieja version | Actualizada |
