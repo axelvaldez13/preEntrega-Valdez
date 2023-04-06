@@ -1,6 +1,6 @@
 # Coderhouse: ecommerce
 
-Realizamos un proyecto basado en una ecommerce con ReactJs como base de frontend y Firebase para los servicios de backend.
+Realizamos un proyecto basado en una ecommerce con ReactJs como base de frontend y Firebase para los servicios de backend. El proyecto se llama creargtive y se trata de un proyecto de venta de imagenes donde se realizan los pagos en pesos. Alli se puede elegir la cantidad, los autores, entre otros detalles.
 
 ## Versiones
 
